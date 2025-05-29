@@ -12,6 +12,11 @@ export default {
         playfair: ['"Playfair Display"', 'serif'],
       },
     },
+    screens: {
+      xs: '438px',
+      sm: '640px',
+      // keep the rest
+    },
   },
   plugins: [],
 }

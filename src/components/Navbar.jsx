@@ -10,7 +10,7 @@ const Navbar = () => {
             className="nav-item align-self-center w-11"
           />
         </a>
-        <div className="flex flex-col leading-non text-xs">
+        <div className="hidden xs:flex flex-col leading-non text-xs">
           <a href="">
             <span className="nav-item">Coded Designer</span>
           </a>
