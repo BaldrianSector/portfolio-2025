@@ -1,42 +1,38 @@
 const Navbar = () => {
   return (
-    <nav className="flex justify-between items-center px-6 py-4 bg-white text-black">
+    <nav className="flex justify-between items-center px-6 py-4 bg-white text-black font-reem">
       {/* Left side */}
       <div className="left-side flex items-center gap-2">
         <a href="">
           <img
             src="src/assets/icons/logo.svg"
             alt="Logo"
-            className="nav-item align-self-center w-12"
+            className="nav-item align-self-center w-11"
           />
         </a>
-        <div className="flex flex-col leading-none">
+        <div className="flex flex-col leading-non text-xs">
           <a href="">
-            <span className="nav-item reem text-xs">Coded Designer</span>
+            <span className="nav-item">Coded Designer</span>
           </a>
           <a href="">
-            <span className="nav-item reem text-xs">Copenhagen, Denmark</span>
+            <span className="nav-item">Copenhagen, Denmark</span>
           </a>
         </div>
       </div>
 
       {/* Right side */}
-      <div className="right-side flex gap-4 items-center">
+      <div className="flex gap-4 items-center leading-none">
         <div className="Name">
-          <a href="#" className="nav-item reem uppercase">
+          <a href="#" className="nav-item uppercase text-3xl">
             Baldrian
           </a>
         </div>
-      </div>
 
-      {/* Menu toggle */}
-      <div className="menu-toggle flex gap-2 items-center">
-        <p id="menu-open" className="nav-item font-bold cursor-pointer">
-          ☰
-        </p>
-        <p id="menu-close" className="font-bold cursor-pointer hidden">
-          ✕
-        </p>
+        {/* Menu toggle */}
+        <div className="menu-toggle cursor-pointer flex items-center justify-center text-3xl">
+          <p id="menu-open" className="">☰</p>
+          <p id="menu-close" className="hidden">✕</p>
+        </div>
       </div>
     </nav>
   );
