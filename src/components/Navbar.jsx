@@ -6,7 +6,7 @@ const Navbar = () => {
         <a href="">
           <img
             src="/⌥.svg"
-            alt="Baldrian Sector Logo"
+            alt="Logo"
             className="nav-item align-self-center w-6 h-6"
           />
         </a>

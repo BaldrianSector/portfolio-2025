@@ -12,7 +12,7 @@ function App() {
 
   return (
     <div ref={container} className="App">
-      <Navbar />
+      <Navbar/>
     </div>
   );
 }
