@@ -4,6 +4,7 @@ import { useGSAP } from '@gsap/react';
 import './App.css';
 
 import Navbar from './components/Navbar';
+import ProjectSection from './components/ProjectSection';
 
 gsap.registerPlugin(useGSAP);
 
@@ -12,7 +13,8 @@ function App() {
 
   return (
     <div ref={container} className="App">
-      <Navbar/>
+      <Navbar />
+      <ProjectSection />
     </div>
   );
 }
