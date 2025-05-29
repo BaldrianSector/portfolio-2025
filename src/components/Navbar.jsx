@@ -1,24 +1,43 @@
 const Navbar = () => {
   return (
-    <nav className="flex items-center justify-between px-6 py-4 bg-gray-900 text-white shadow-md">
-      <div className="text-lg font-semibold tracking-tight">Baldrian</div>
-      <ul className="flex space-x-6 text-sm font-medium">
-        <li>
-          <a href="#about" className="hover:underline">
-            About
+    <nav className="flex justify-between items-center px-6 py-4 bg-white text-black">
+      {/* Left side */}
+      <div className="left-side flex items-center gap-2">
+        <a href="">
+          <img
+            src="/⌥.svg"
+            alt="Baldrian Sector Logo"
+            className="nav-item align-self-center w-6 h-6"
+          />
+        </a>
+        <div className="flex flex-col leading-none">
+          <a href="">
+            <span className="nav-item reem text-xs">Coded Designer</span>
           </a>
-        </li>
-        <li>
-          <a href="#projects" className="hover:underline">
-            Projects
+          <a href="">
+            <span className="nav-item reem text-xs">Copenhagen, Denmark</span>
           </a>
-        </li>
-        <li>
-          <a href="#contact" className="hover:underline">
-            Contact
+        </div>
+      </div>
+
+      {/* Right side */}
+      <div className="right-side flex gap-4 items-center">
+        <div className="Name">
+          <a href="#" className="nav-item reem uppercase">
+            Baldrian
           </a>
-        </li>
-      </ul>
+        </div>
+      </div>
+
+      {/* Menu toggle */}
+      <div className="menu-toggle flex gap-2 items-center">
+        <p id="menu-open" className="nav-item font-bold cursor-pointer">
+          ☰
+        </p>
+        <p id="menu-close" className="font-bold cursor-pointer hidden">
+          ✕
+        </p>
+      </div>
     </nav>
   );
 };

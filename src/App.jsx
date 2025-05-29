@@ -1,53 +1,45 @@
-import { useState, useRef } from 'react'
+import { useRef } from 'react'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import { useStoryblokApi } from '@storyblok/react';
+import { useEffect, useState } from 'react';
+
 
 import Navbar from './components/Navbar'
 
 gsap.registerPlugin(useGSAP)
 
 function App() {
-  const [count, setCount] = useState(0)
-  const container = useRef()
+  const container = useRef();
+  const storyblokApi = useStoryblokApi();
+  const [storyData, setStoryData] = useState(null);
 
-  useGSAP(() => {
-    gsap.from('.header', { y: -10, opacity: 0 , duration: 2, ease: 'power1.inOut' })
-  }, { scope: container })
+  useEffect(() => {
+    async function fetchStory() {
+      try {
+        const { data } = await storyblokApi.get(`cdn/stories/home`);
+        setStoryData(data.story);
+        console.log("Full story object:", data.story); // 🔍 see structure in console
+      } catch (error) {
+        console.error("Error fetching story:", error);
+      }
+    }
+
+    fetchStory();
+  }, [storyblokApi]);
 
   return (
-    <>
-      <div ref={container} className="App">
-        <Navbar />
-        <div>
-          <h1 className="header text-3xl font-bold underline">
-            Hello world!
-          </h1>
-
-          <a href="https://vite.dev" target="_blank">
-            <img src={viteLogo} className="logo" alt="Vite logo" />
-          </a>
-          <a href="https://react.dev" target="_blank">
-            <img src={reactLogo} className="logo react" alt="React logo" />
-          </a>
-        </div>
-        <h1>Vite + React</h1>
-        <div className="card">
-          <button onClick={() => setCount((count) => count + 1)}>
-            count is {count}
-          </button>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test HMR
-          </p>
-        </div>
-        <p className="read-the-docs">
-          Click on the Vite and React logos to learn more
-        </p>
-      </div>
-    </>
-  )
+    <div ref={container} className="App">
+      <Navbar />
+      <main className="p-8">
+        <h1 className="text-2xl font-bold">Storyblok Debug</h1>
+        <pre className="text-sm bg-gray-100 p-4 overflow-auto">
+          {storyData ? JSON.stringify(storyData, null, 2) : 'Loading...'}
+        </pre>
+      </main>
+    </div>
+  );
 }
 
-export default App
+export default App;
