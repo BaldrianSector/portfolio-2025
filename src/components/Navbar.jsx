@@ -5,9 +5,9 @@ const Navbar = () => {
       <div className="left-side flex items-center gap-2">
         <a href="">
           <img
-            src="/⌥.svg"
+            src="src/assets/icons/logo.svg"
             alt="Logo"
-            className="nav-item align-self-center w-6 h-6"
+            className="nav-item align-self-center w-12"
           />
         </a>
         <div className="flex flex-col leading-none">
