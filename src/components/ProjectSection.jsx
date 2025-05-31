@@ -24,9 +24,12 @@ const ProjectSection = () => {
   if (!story) return <div className="p-8">Loading projects…</div>;
 
   return (
-    <section className="p-8">
-      <h2 className="text-3xl font-bold mb-6 text-center">Projects</h2>
-      <div className="space-y-12">
+    <section className="px-10">
+      <h2 className="text-4xl font-bold mb-6">✦ Featured Projects</h2>
+      
+      <p className="text-lg font-medium mb-8">I obsess over code. My brain is built for problem solving and I always put extreme amounts of care into anything I make.</p>
+      
+      <div className="space-y-12 flex flex-col align-items-start">
         {story.content.body?.map((blok) => (
           <StoryblokComponent blok={blok} key={blok._uid} />
         ))}

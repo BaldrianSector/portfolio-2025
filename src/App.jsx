@@ -4,6 +4,7 @@ import { useGSAP } from '@gsap/react';
 import './App.css';
 
 import Navbar from './components/Navbar';
+import Section from './components/Section';
 import ProjectSection from './components/ProjectSection';
 
 gsap.registerPlugin(useGSAP);
@@ -13,8 +14,15 @@ function App() {
 
   return (
     <div ref={container} className="App">
+      
+
       <Navbar />
-      <ProjectSection />
+      <Section className="hero w-full bg-dark pt-40 pb-40">
+      
+      </Section>
+      <Section className="projects bg-light pt-40 pb-40">
+        <ProjectSection />
+      </Section>
     </div>
   );
 }

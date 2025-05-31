@@ -3,7 +3,7 @@ const ProjectCard = ({ blok }) => {
   const isVideo = url ? /\.(mp4|webm|mov)$/i.test(url) : false;
 
   return (
-    <div className="p-6 border rounded shadow-md text-center">
+    <div className="p-6">
       {url && (
         isVideo ? (
           <video
@@ -18,15 +18,17 @@ const ProjectCard = ({ blok }) => {
           <img
             src={url}
             alt={blok.title || "Project image"}
-            className="mx-auto mb-4 rounded shadow-md aspect-video object-cover"
+            className="mx-auto mb-6 rounded shadow-md aspect-video object-cover"
           />
         )
       )}
       
-      <h3 className="text-xl font-bold mb-2">{blok.title || "Untitled project"}</h3>
-      <p className="text-gray-700">
-        {blok.description || "No description provided."}
-      </p>
+      <div className="font-inter leading-none">
+        <h3 className="text-xl font-semibold mb-2">{blok.title || "Untitled project"}</h3>
+        <p className="text-xl text-gray font-medium">
+          {blok.description || "No description provided."}
+        </p>
+      </div>
     </div>
   );
 };

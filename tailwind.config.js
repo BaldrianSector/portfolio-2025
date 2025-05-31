@@ -12,6 +12,14 @@ export default {
         playfair: ['"Playfair Display"', 'serif'],
       },
     },
+    colors: {
+      'black': '#0F0F0F',
+      'white': '#FFFFFF',
+      'light': '#D9D9D9',
+      'dark': '#0E1010',
+      'gray': '#656565',
+      'link': '#FF6347',
+    },
     screens: {
       xs: '438px',
       sm: '640px',
