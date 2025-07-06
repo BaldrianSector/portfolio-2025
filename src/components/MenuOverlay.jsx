@@ -4,7 +4,10 @@ import gsap from "gsap";
 const socials = [
   { name: "GitHub", url: "https://github.com/BaldrianSector" },
   { name: "Instagram", url: "https://www.instagram.com/baldrian.jpeg/" },
-  { name: "LinkedIn", url: "https://www.linkedin.com/in/baldrian-sector-227042269/" },
+  {
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/in/baldrian-sector-227042269/",
+  },
   { name: "Facebook", url: "https://www.facebook.com/BaldrianSector" },
 ];
 
@@ -20,9 +23,17 @@ export default function MenuOverlay({ open, onClose }) {
 
   useEffect(() => {
     if (open) {
-      gsap.to(overlayRef.current, { clipPath: "polygon(0% 0%, 100% 0%, 100% 175%, 0% 100%)", duration: 1, ease: "power4.inOut" });
+      gsap.to(overlayRef.current, {
+        clipPath: "polygon(0% 0%, 100% 0%, 100% 175%, 0% 100%)",
+        duration: 1,
+        ease: "power4.inOut",
+      });
     } else {
-      gsap.to(overlayRef.current, { clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)", duration: 1, ease: "power4.inOut" });
+      gsap.to(overlayRef.current, {
+        clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
+        duration: 1,
+        ease: "power4.inOut",
+      });
     }
   }, [open]);
 
@@ -36,7 +47,11 @@ export default function MenuOverlay({ open, onClose }) {
         <div className="menu-items flex gap-10 w-full px-10">
           <div className="col-lg flex-1 hidden md:flex justify-center items-center">
             <div className="menu-preview-img w-1/2 h-full overflow-hidden">
-              <img src="/img-1.jpg" alt="" className="w-full h-full object-cover" />
+              <img
+                src="/assets/images/img-1.jpg"
+                alt=""
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
           <div className="col-sm flex-1 flex flex-col gap-10">
@@ -57,7 +72,11 @@ export default function MenuOverlay({ open, onClose }) {
             <div className="menu-socials flex flex-col gap-2">
               {socials.map((social) => (
                 <div className="social" key={social.name}>
-                  <a href={social.url} target="_blank" rel="noopener noreferrer">
+                  <a
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     {social.name}
                   </a>
                 </div>
@@ -65,13 +84,6 @@ export default function MenuOverlay({ open, onClose }) {
             </div>
           </div>
         </div>
-        <button
-          className="absolute top-8 right-8 text-4xl"
-          aria-label="Close menu"
-          onClick={onClose}
-        >
-          ✕
-        </button>
       </div>
     </div>
   );
