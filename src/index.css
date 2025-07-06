@@ -19,7 +19,7 @@ body {
   left: 0;
   z-index: 20;
   clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
-  transition: clip-path 1s cubic-bezier(0.6, 0, 0.4, 1);
+  transition: clip-path 0.8s cubic-bezier(0.6, 0, 0.4, 1);
 }
 
 .menu-content {

@@ -25,13 +25,11 @@ export default function MenuOverlay({ open, onClose }) {
     if (open) {
       gsap.to(overlayRef.current, {
         clipPath: "polygon(0% 0%, 100% 0%, 100% 175%, 0% 100%)",
-        duration: 1,
         ease: "power4.inOut",
       });
     } else {
       gsap.to(overlayRef.current, {
         clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
-        duration: 1,
         ease: "power4.inOut",
       });
     }
