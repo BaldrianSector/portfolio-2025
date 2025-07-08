@@ -19,7 +19,7 @@ body {
   left: 0;
   z-index: 20;
   clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
-  transition: clip-path 0.8s cubic-bezier(0.6, 0, 0.4, 1);
+  transition: clip-path cubic-bezier(0.6, 0, 0.4, 1);
 }
 
 .menu-content {
@@ -33,6 +33,9 @@ body {
   will-change: opacity, transform;
 }
 
+/* ===== MENU LAYOUT & STRUCTURE ===== */
+
+/* Common styles for menu items and footer */
 .menu-items,
 .menu-footer {
   width: 100%;
@@ -41,20 +44,25 @@ body {
   gap: 2.5em;
 }
 
+/* Column flex ratios */
 .col-lg {
-  flex: 3;
+  flex: 3; /* Left column takes 3/5 of space */
 }
 
 .col-sm {
-  flex: 2;
+  flex: 2; /* Right column takes 2/5 of space */
 }
 
+/* ===== MENU ITEMS SPECIFIC STYLES ===== */
+
+/* Left column for preview image */
 .menu-items .col-lg {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+/* Preview image container */
 .menu-preview-img {
   position: relative;
   width: 45%;
@@ -71,6 +79,7 @@ body {
   object-fit: cover;
 }
 
+/* Right column for links and socials */
 .menu-items .col-sm {
   padding: 2.5em 0;
   display: flex;
@@ -78,6 +87,7 @@ body {
   gap: 2.5em;
 }
 
+/* Links and socials containers */
 .menu-links,
 .menu-socials {
   display: flex;
@@ -85,12 +95,20 @@ body {
   gap: 0.5em;
 }
 
+/* Extra spacing for menu links */
+.menu-links {
+  gap: 1.5em;
+  line-height: 3.5em;
+}
+
+/* Individual link and social item containers */
 .link,
 .social {
   padding-bottom: 6px;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 
+/* Link styling */
 .link a,
 .social a {
   display: inline-block;
@@ -111,22 +129,39 @@ body {
   color: #fff;
 }
 
+/* ===== MENU FOOTER SPECIFIC STYLES ===== */
+
+/* Footer positioning */
 .menu-footer {
   position: absolute;
   bottom: 0;
 }
 
+/* Right column layout for footer */
 .menu-footer .col-sm {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Spreads Origin and Resume links apart */
 }
 
+/* Base footer link styling */
+.menu-footer a {
+  position: relative;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 300;
+  user-select: none;
+}
+
+/* ===== ANIMATED UNDERLINES ===== */
+
+/* Underline effect for all menu links */
 .link a::after,
 .social a::after,
 .menu-footer a::after {
   position: absolute;
   content: "";
-  top: 102.5%;
+  top: calc(102.5%); /* Add a gap below text */
   left: 0;
   width: 100%;
   height: 2px;
@@ -136,9 +171,65 @@ body {
   transition: transform 0.3s cubic-bezier(0.6, 0, 0.4, 1);
 }
 
+.link a:after {
+  top: calc(180%); /* Add a gap below text */
+}
+
+/* Hover effect - reveals underline */
 .link a:hover::after,
 .social a:hover::after,
 .menu-footer a:hover::after {
-  transform: scaleX(1);
-  transform-origin: left;
+  transform: scaleX(1); /* Full width on hover */
+  transform-origin: left; /* Changes direction for smooth effect */
+}
+
+/* ===== HERO SECTION STYLES ===== */
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100svh;
+}
+
+.hero {
+  position: relative;
+  height: 100svh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.hero-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100svh;
+  z-index: -1;
+}
+
+.hero h1 {
+  width: 80%;
+}
+
+/* ===== RESPONSIVE STYLES ===== */
+
+@media (max-width: 900px) {
+  .hero h1 {
+    width: 100%;
+    font-size: 4rem;
+    letter-spacing: 0;
+  }
+
+  /* Hide preview image on mobile */
+  .menu-items .col-lg {
+    display: none;
+  }
+
+  /* Remove underline animations on mobile */
+  .link a::after,
+  .social a::after,
+  .menu-footer a::after {
+  }
 }

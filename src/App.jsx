@@ -1,14 +1,16 @@
 import { useRef, useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import "./App.css";
 
 import Navbar from "./components/Navbar";
 import Section from "./components/Section";
+import HeroSection from "./components/HeroSection";
 import ProjectSection from "./components/ProjectSection";
 import MenuOverlay from "./components/MenuOverlay";
 
-gsap.registerPlugin(useGSAP);
+gsap.registerPlugin(useGSAP, ScrollToPlugin);
 
 function App() {
   const container = useRef();
@@ -17,17 +19,35 @@ function App() {
 
   function handleMenuToggle() {
     setIsMenuOpen((prev) => !prev);
-    console.log("handleMenuToggle() called");
   }
 
   return (
     <div ref={container} className="App">
       <Navbar isMenuOpen={isMenuOpen} handleMenuToggle={handleMenuToggle} />
-      <MenuOverlay open={isMenuOpen} onClose={handleMenuToggle} />
-      <Section className="hero w-full bg-dark pt-40 pb-40"></Section>
-      <Section className="projects bg-light pt-40 pb-40">
+      <MenuOverlay
+        isMenuOpen={isMenuOpen}
+        handleMenuToggle={handleMenuToggle}
+      />
+      <Section id="hero" className="hero bg-dark">
+        <HeroSection />
+      </Section>
+      <Section id="projects" className="projects bg-light">
         <ProjectSection />
       </Section>
+      <Section id="about" className="about bg-dark">
+        This is the about section. It contains information about the portfolio,
+        the designer, and their work.
+      </Section>
+      <Section id="contact" className="contact bg-light">
+        This is the contact section. It contains a form or contact information
+        for reaching out to the designer.
+      </Section>
+      <footer className="bg-dark text-white p-4 text-center">
+        <p className="text-sm">
+          © {new Date().getFullYear()} Baldrian Sector. Made with ❤️ in
+          Copenhagen.
+        </p>
+      </footer>
     </div>
   );
 }
