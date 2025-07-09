@@ -62,6 +62,7 @@ const ProjectSection = () => {
           title: blok.title,
           description: blok.description,
           asset: blok.asset,
+          aspect: blok.aspect,
         }
       : {};
   }
@@ -84,6 +85,8 @@ const ProjectSection = () => {
       <div className="space-y-20 flex flex-col align-items-start">
         {sortedProjects.map((project, idx) => {
           const cardData = getProjectCardData(project);
+
+          console.log("Project Card Data:", cardData);
           return (
             <div
               key={project.uuid}
