@@ -29,7 +29,7 @@ const ProjectArticle = () => {
   if (story === false) return <div className="p-8">Project not found.</div>;
 
   return (
-    <article className="max-w-3xl mx-auto py-20 px-6 w-screen h-screen bg-dark">
+    <article className="py-20 px-6 w-screen h-screen bg-dark">
       <h1 className="text-4xl font-bold mb-6">{story.content.title}</h1>
       {story.content.cover && (
         <img
