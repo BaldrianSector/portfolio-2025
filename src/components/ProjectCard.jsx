@@ -1,5 +1,5 @@
-const ProjectCard = ({ blok }) => {
-  const url = blok.asset?.filename || null;
+const ProjectCard = ({ title, description, asset }) => {
+  const url = asset?.filename || null;
   const isVideo = url ? /\.(mp4|webm|mov)$/i.test(url) : false;
 
   const mediaClassName =
@@ -21,18 +21,16 @@ const ProjectCard = ({ blok }) => {
           ) : (
             <img
               src={url}
-              alt={blok.title || "Project image"}
+              alt={title || "Project image"}
               className={mediaClassName}
             />
           ))}
       </div>
 
       <div className="font-inter leading-normal">
-        <h3 className="text-l font-semibold">
-          {blok.title || "Untitled project"}
-        </h3>
+        <h3 className="text-l font-semibold">{title || "Untitled project"}</h3>
         <p className="text-l text-gray font-medium">
-          {blok.description || "No description provided."}
+          {description || "No description provided."}
         </p>
       </div>
     </div>

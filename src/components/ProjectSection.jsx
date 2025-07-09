@@ -1,41 +1,40 @@
-import { useStoryblokApi, StoryblokComponent } from "@storyblok/react";
+import { useStoryblokApi } from "@storyblok/react";
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Link } from "react-router-dom";
+import ProjectCard from "./ProjectCard";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const ProjectSection = () => {
   const storyblokApi = useStoryblokApi();
-  const [story, setStory] = useState(null);
+  const [projects, setProjects] = useState([]);
   const cardsRef = useRef([]);
 
   useEffect(() => {
     async function fetchProjects() {
       try {
-        const { data } = await storyblokApi.get("cdn/stories/projects", {
+        const { data } = await storyblokApi.get("cdn/stories", {
+          starts_with: "projects/",
           version: "draft",
+          sort_by: "first_published_at:desc",
         });
-        setStory(data.story);
+        setProjects(data.stories);
       } catch (err) {
-        console.error("Failed to fetch project story:", err);
+        console.error("Failed to fetch projects:", err);
       }
     }
     fetchProjects();
   }, [storyblokApi]);
 
-  // GSAP animation effect
   useEffect(() => {
-    if (!story) return;
-
+    if (!projects.length) return;
     cardsRef.current.forEach((el) => {
       if (!el) return;
       gsap.fromTo(
         el,
-        {
-          y: 40,
-          opacity: 0,
-        },
+        { y: 40, opacity: 0 },
         {
           y: 0,
           opacity: 1,
@@ -43,40 +42,60 @@ const ProjectSection = () => {
           ease: "power3.inOut",
           scrollTrigger: {
             trigger: el,
-            start: "top 90%",
+            start: "top 95%",
             toggleActions: "play none none none",
           },
         }
       );
     });
-
-    // Clean up triggers on unmount
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
-  }, [story]);
+  }, [projects]);
 
-  if (!story) return <div className="p-8">Loading projects…</div>;
+  function getProjectCardData(project) {
+    const blok = project.content.body?.find(
+      (b) => b.component === "project-card"
+    );
+    return blok
+      ? {
+          title: blok.title,
+          description: blok.description,
+          asset: blok.asset,
+        }
+      : {};
+  }
+
+  if (!projects.length) return <div className="p-8">Loading projects…</div>;
+
+  const sortedProjects = [...projects].sort((a, b) => {
+    const aPriority = a.content.priority ?? 9999; // fallback for missing
+    const bPriority = b.content.priority ?? 9999;
+    return aPriority - bPriority;
+  });
 
   return (
     <section className="px-10 flex flex-col items-start max-w-6xl mx-auto py-16">
       <h2 className="text-4xl font-bold mb-6">✦ Featured Projects</h2>
-
       <p className="text-lg font-medium mb-20 max-w-xl leading-relaxed">
         I obsess over code. My brain is built for problem solving and I always
         put extreme amounts of care into anything I make.
       </p>
-
       <div className="space-y-20 flex flex-col align-items-start">
-        {story.content.body?.map((blok, idx) => (
-          <div
-            key={blok._uid}
-            ref={(el) => (cardsRef.current[idx] = el)}
-            className="project-card" // You can use this for styling
-          >
-            <StoryblokComponent blok={blok} />
-          </div>
-        ))}
+        {sortedProjects.map((project, idx) => {
+          const cardData = getProjectCardData(project);
+          return (
+            <div
+              key={project.uuid}
+              ref={(el) => (cardsRef.current[idx] = el)}
+              className="project-card"
+            >
+              <Link to={`/projects/${project.slug}`}>
+                <ProjectCard {...cardData} />
+              </Link>
+            </div>
+          );
+        })}
       </div>
     </section>
   );
