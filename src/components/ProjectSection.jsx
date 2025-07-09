@@ -12,7 +12,6 @@ const ProjectSection = () => {
           version: "draft", // ✅ fetch even unpublished changes
         });
         setStory(data.story);
-        // console.log("Loaded project story:", data.story);
       } catch (err) {
         console.error("Failed to fetch project story:", err);
       }
@@ -27,12 +26,12 @@ const ProjectSection = () => {
     <section className="px-10 flex flex-col items-start max-w-6xl mx-auto py-16">
       <h2 className="text-4xl font-bold mb-6">✦ Featured Projects</h2>
 
-      <p className="text-lg font-medium mb-8">
+      <p className="text-lg font-medium mb-20 max-w-xl leading-relaxed">
         I obsess over code. My brain is built for problem solving and I always
         put extreme amounts of care into anything I make.
       </p>
 
-      <div className="space-y-12 flex flex-col align-items-start">
+      <div className="space-y-20 flex flex-col align-items-start">
         {story.content.body?.map((blok) => (
           <StoryblokComponent blok={blok} key={blok._uid} />
         ))}

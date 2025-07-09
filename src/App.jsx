@@ -31,14 +31,14 @@ function App() {
       <Section id="hero" className="hero bg-dark">
         <HeroSection />
       </Section>
-      <Section id="projects" className="projects bg-light">
+      <Section id="projects" className="projects bg-light text-dark">
         <ProjectSection />
       </Section>
       <Section id="about" className="about bg-dark">
         This is the about section. It contains information about the portfolio,
         the designer, and their work.
       </Section>
-      <Section id="contact" className="contact bg-light">
+      <Section id="contact" className="contact bg-light text-dark">
         This is the contact section. It contains a form or contact information
         for reaching out to the designer.
       </Section>
