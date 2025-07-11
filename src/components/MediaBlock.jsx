@@ -1,25 +1,21 @@
 const MediaBlock = ({ blok }) => {
   if (!blok.asset || !blok.asset.filename) {
     return (
-      <div className="bg-gray-800 text-white p-4 rounded-xl">
+      <div className="bg-gray-800 text-white">
         <p>No media available for this block.</p>
       </div>
     );
   }
 
   return (
-    <figure className="mb-10">
+    <figure className="">
       {blok.mediaType === "video" ? (
-        <video
-          src={blok.asset.filename}
-          controls
-          className="w-full rounded-xl"
-        />
+        <video src={blok.asset.filename} controls className="w-full" />
       ) : (
         <img
           src={blok.asset.filename}
           alt={blok.description || "Media"}
-          className="w-full rounded-xl"
+          className="w-full"
         />
       )}
       {blok.description && (

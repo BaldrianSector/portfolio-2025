@@ -4,12 +4,14 @@ const ArticleHeader = ({ blok }) => {
     blok.cover?.filename?.endsWith(".webm");
 
   return (
-    <header className="mb-16 text-center">
+    <header className="text-center">
       {/* Title */}
       {blok.title && <h1 className="text-5xl font-bold mb-4">{blok.title}</h1>}
 
       {/* Year */}
-      {blok.year && <p className="text-lg text-gray-400 mb-2">{blok.year}</p>}
+      {blok.year && (
+        <p className="text-lg text-gray-400 mb-2 italic">({blok.year})</p>
+      )}
 
       {/* Description */}
       {blok.description && (
