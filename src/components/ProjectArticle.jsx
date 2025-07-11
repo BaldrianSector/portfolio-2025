@@ -29,16 +29,12 @@ const ProjectArticle = () => {
   if (story === false) return <div className="p-8">Project not found.</div>;
 
   return (
-    <article className="py-20 px-6 w-screen h-screen bg-dark">
-      <h1 className="text-4xl font-bold mb-6">{story.content.title}</h1>
-      {story.content.cover && (
-        <img
-          src={story.content.cover.filename}
-          alt={story.content.cover.alt || story.content.title}
-          className="mb-8 rounded-xl max-w-full"
-        />
-      )}
-      <StoryblokComponent blok={story.content} />
+    <article className="py-20 px-6 w-screen bg-light text-dark">
+      {story.content.body
+        .filter((blok) => blok.component !== "project-card") // 👈 Skip project-card
+        .map((blok) => (
+          <StoryblokComponent blok={blok} key={blok._uid} />
+        ))}
     </article>
   );
 };
