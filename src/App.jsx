@@ -59,7 +59,7 @@ function AppLayout() {
       </Routes>
 
       <footer className="bg-dark text-white p-4 text-center">
-        <p className="text-sm">
+        <p className="text-sm font-reem">
           © {new Date().getFullYear()} Made with 🖤 in Copenhagen
         </p>
       </footer>
