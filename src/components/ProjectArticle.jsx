@@ -29,7 +29,7 @@ const ProjectArticle = () => {
   if (story === false) return <div className="p-8">Project not found.</div>;
 
   return (
-    <article className="pt-32 py-20 px-6 bg-light text-dark flex flex-col items-center">
+    <article className="pt-32 py-20 px-10 bg-light text-dark flex flex-col items-center">
       <div className="flex flex-col items-center max-w-3xl">
         {story.content.body
           .filter((blok) => blok.component !== "project-card") // 👈 Skip project-card
