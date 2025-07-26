@@ -37,7 +37,7 @@ const Navbar = ({ isMenuOpen, handleMenuToggle }) => {
       <div className="flex gap-4 items-center leading-none">
         <a
           href="#"
-          className="uppercase text-2xl font-[Reem_Kufi,sans-serif] text-white tracking-tight"
+          className="uppercase text-2xl font-reem text-white tracking-tight"
         >
           Baldrian
         </a>

@@ -2,7 +2,7 @@ const HeroSection = () => {
   return (
     <>
       {/* Grid container */}
-      <div className="min-w-[300px] min-h-[500px] grid">
+      <div className="min-w-[300px] min-h-[500px] grid self-center">
         {/* Video wrapper to control overflow */}
         <div className="relative w-full h-full overflow-hidden col-start-1 row-start-1 z-0">
           <video
@@ -15,21 +15,21 @@ const HeroSection = () => {
         </div>
 
         {/* Top-left text */}
-        <p className="scramble-text self-start justify-self-start -top-10 -left-10 text-white text-lg z-10 col-start-1 row-start-1 max-w-[210px] indent-4 leading-5">
+        <p className="scramble-text relative self-start justify-self-start -top-11 -left-10 text-white text-lg z-10 col-start-1 row-start-1 max-w-[210px] indent-4 leading-5">
           Design student working at the intersection of programming, technology
           and human interaction.
         </p>
 
         {/* Bottom-right text */}
-        <p className="scramble-text self-end justify-self-end -bottom-10 -right-18 text-white text-lg z-10 col-start-1 row-start-1 max-w-[180px] indent-4 leading-5">
+        <p className="scramble-text relative self-end justify-self-end -bottom-10 -right-20 text-white text-lg z-10 col-start-1 row-start-1 max-w-[180px] indent-4 leading-5">
           Coding the future, shooting sunsets and{" "}
-          <span className="playfair">
+          <span className="font-playfair">
             occasionally jumping out of airplanes.
           </span>
         </p>
       </div>
 
-      <span className="reem text-xs absolute bottom-30 left-10">
+      <span className="font-reem text-xs absolute bottom-30 left-10">
         Selection of recent
         <br />
         work and projects
