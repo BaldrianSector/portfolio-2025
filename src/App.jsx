@@ -60,7 +60,7 @@ function AppLayout() {
 
       <footer className="bg-dark text-white p-4 text-center">
         <p className="text-sm">
-          © {new Date().getFullYear()} Made with ❤️ in Copenhagen
+          © {new Date().getFullYear()} Made with 🖤 in Copenhagen
         </p>
       </footer>
     </div>
