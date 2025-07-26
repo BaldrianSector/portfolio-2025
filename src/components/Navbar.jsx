@@ -15,19 +15,19 @@ const Navbar = ({ isMenuOpen, handleMenuToggle }) => {
     >
       {/* Left Side */}
       <div className="flex items-center gap-2">
-        <a href="">
+        <a href="/#">
           <img
             src="/assets/icons/logo.svg"
             alt="Logo"
-            className="w-10 select-none"
+            className="w-11 select-none"
             style={{ filter: "invert(1)" }}
           />
         </a>
         <div className="hidden xs:flex flex-col text-xs">
-          <a href="" className="">
+          <a href="/#" className="">
             Coded Designer
           </a>
-          <a href="" className="">
+          <a href="/#" className="">
             Copenhagen, Denmark
           </a>
         </div>
