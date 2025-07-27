@@ -224,6 +224,23 @@ section {
   width: 80%;
 }
 
+/* ===== SELECTION COLOR ===== */
+
+::selection {
+  background: rgba(255, 255, 255, 0.8);
+  color: #0e1010;
+}
+
+::-moz-selection {
+  background: rgba(255, 255, 255, 0.8);
+  color: #0e1010;
+}
+
+::-webkit-selection {
+  background: rgba(255, 255, 255, 0.8);
+  color: #0e1010;
+}
+
 /* ===== RESPONSIVE STYLES ===== */
 
 @media (max-width: 900px) {
