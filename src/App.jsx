@@ -12,6 +12,7 @@ import ProjectSection from "./components/ProjectSection";
 import ProjectArticle from "./components/ProjectArticle";
 import AboutSection from "./components/AboutSection";
 import MenuOverlay from "./components/MenuOverlay";
+import NotFound from "./components/NotFound";
 
 gsap.registerPlugin(useGSAP, ScrollToPlugin);
 
@@ -56,9 +57,12 @@ function AppLayout() {
 
         {/* Project detail page */}
         <Route path="/projects/:slug" element={<ProjectArticle />} />
+
+        {/* Fallback for 404 */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
 
-      <footer className="bg-dark text-white p-4 text-center">
+      <footer className="bg-dark text-light p-4 text-center">
         <p className="text-sm font-reem">
           © {new Date().getFullYear()} Made with 🖤 in Copenhagen
         </p>
