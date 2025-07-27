@@ -46,7 +46,7 @@ const AboutSection = () => {
     gsap.fromTo(roleRef.current, { opacity: 0 }, { opacity: 1, duration: 0.8 });
 
     return () => clearInterval(interval);
-  }, [currentIndex]);
+  }, [currentIndex, roles.length]);
 
   return (
     <div className="flex flex-col items-start mx-10 pt-10">

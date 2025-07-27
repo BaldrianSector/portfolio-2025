@@ -242,5 +242,6 @@ section {
   .link a::after,
   .social a::after,
   .menu-footer a::after {
+    display: none;
   }
 }
