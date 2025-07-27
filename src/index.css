@@ -125,7 +125,8 @@ body {
   color: #8f8f8f;
 }
 
-.social a:hover {
+.social a:hover,
+.about-text a:hover {
   color: #fff;
 }
 
@@ -158,6 +159,7 @@ body {
 /* Underline effect for all menu links */
 .link a::after,
 .social a::after,
+.about-text a::after,
 .menu-footer a::after {
   position: absolute;
   content: "";
@@ -178,9 +180,18 @@ body {
 /* Hover effect - reveals underline */
 .link a:hover::after,
 .social a:hover::after,
+.about-text a:hover::after,
 .menu-footer a:hover::after {
   transform: scaleX(1); /* Full width on hover */
   transform-origin: left; /* Changes direction for smooth effect */
+}
+
+.about-text a {
+  position: relative;
+  text-decoration: none;
+  color: inherit; /* Keep original color */
+  will-change: transform;
+  transition: color 0.5s;
 }
 
 /* ===== HERO SECTION STYLES ===== */

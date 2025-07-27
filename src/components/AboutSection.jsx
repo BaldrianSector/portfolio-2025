@@ -3,12 +3,13 @@ import gsap from "gsap";
 
 const AboutSection = () => {
   const roles = [
-    "a portrait photographer.",
-    "a licensed skydiver.",
-    "a wind tunnel instructor.",
-    "a rock climber.",
-    "a game designer.",
-    "a teacher at the Danish National School of Performing Arts.",
+    "a portrait and travel photographer.",
+    "a licensed skydiver with more than 100 jumps.",
+    "a professional wind tunnel instructor.",
+    "an avid rock climber.",
+    "an escape room and puzzle game designer.",
+    "a teacher of programming at the Danish National School of Performing Arts.",
+    "up for new challenges.",
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -52,12 +53,12 @@ const AboutSection = () => {
       <img
         src="public/assets/images/Baldrian Portrait.jpg"
         alt="Portrait of Baldrian"
-        className="max-w-sm mb-4 shadow-lg"
+        className="max-w-sm mb-10 shadow-lg"
       />
 
       <h2 className="text-4xl font-bold mb-4">❖ About me</h2>
 
-      <p className="text-lg font-medium mb-4 max-w-xl leading-relaxed text-gray">
+      <p className="about-text text-lg font-medium mb-4 max-w-xl leading-relaxed text-gray">
         I’m studying Coded Design at the Danish School of Media and Journalism.
         I work with a variety of tools including —{" "}
         {[
@@ -65,7 +66,7 @@ const AboutSection = () => {
             "JavaScript",
             "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
           ],
-          ["Generative AI", "https://openai.com/research"],
+          ["Generative AI"],
           ["Figma", "https://www.figma.com/"],
           ["Processing", "https://processing.org/"],
           ["Three.js", "https://threejs.org/"],
@@ -80,9 +81,13 @@ const AboutSection = () => {
           ["TouchDesigner", "https://derivative.ca/"],
         ].map(([name, url], index, array) => (
           <span key={name}>
-            <a href={url} target="_blank" rel="noopener noreferrer">
-              {name}
-            </a>
+            {url ? (
+              <a href={url} target="_blank" rel="noopener noreferrer">
+                {name}
+              </a>
+            ) : (
+              <span>{name}</span>
+            )}
             {index < array.length - 2 ? ", " : ""}
             {index === array.length - 2 ? " and " : ""}
           </span>
@@ -95,7 +100,7 @@ const AboutSection = () => {
         style={{ minHeight: "4.5rem" }}
       >
         But I’m also{" "}
-        <span className="" ref={roleRef}>
+        <span className="italic" ref={roleRef}>
           {roles[currentIndex]}
         </span>
       </p>
