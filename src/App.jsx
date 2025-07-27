@@ -10,6 +10,7 @@ import Section from "./components/Section";
 import HeroSection from "./components/HeroSection";
 import ProjectSection from "./components/ProjectSection";
 import ProjectArticle from "./components/ProjectArticle";
+import AboutSection from "./components/AboutSection";
 import MenuOverlay from "./components/MenuOverlay";
 
 gsap.registerPlugin(useGSAP, ScrollToPlugin);
@@ -43,8 +44,7 @@ function AppLayout() {
                 <ProjectSection />
               </Section>
               <Section id="about" className="about bg-dark">
-                This is the about section. It contains information about the
-                portfolio, the designer, and their work.
+                <AboutSection />
               </Section>
               <Section id="contact" className="contact bg-light text-dark">
                 This is the contact section. It contains a form or contact
