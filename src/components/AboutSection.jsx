@@ -51,7 +51,7 @@ const AboutSection = () => {
   return (
     <div className="flex flex-col items-start mx-10 pt-10">
       <img
-        src="public/assets/images/Baldrian Portrait.jpg"
+        src="/assets/images/Baldrian Portrait.jpg"
         alt="Portrait of Baldrian"
         className="max-w-sm mb-10 shadow-lg"
       />
