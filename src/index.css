@@ -226,6 +226,11 @@ section {
 
 /* ===== SELECTION COLOR ===== */
 
+video,
+img {
+  user-select: none;
+}
+
 ::selection {
   background: rgba(255, 255, 255, 0.8);
   color: #0e1010;

@@ -9,7 +9,7 @@ const ProjectCard = ({ title, description, asset, aspect }) => {
 
   return (
     <div className="max-w-xl cursor-pointer">
-      <div className={`overflow-hidden ${aspectClass} select-none`}>
+      <div className={`overflow-hidden ${aspectClass}`}>
         {url &&
           (isVideo ? (
             <video
