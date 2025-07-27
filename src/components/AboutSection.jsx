@@ -7,8 +7,8 @@ const AboutSection = () => {
     "a licensed skydiver with more than 100 jumps.",
     "a professional wind tunnel instructor.",
     "an avid rock climber.",
-    "an escape room and puzzle game designer.",
-    "a teacher of programming at the Danish National School of Performing Arts.",
+    "an escape room and puzzle game enthusiast.",
+    "a programming teacher at the Danish National School of Performing Arts.",
     "up for new challenges.",
   ];
 
@@ -59,8 +59,16 @@ const AboutSection = () => {
       <h2 className="text-4xl font-bold mb-4">❖ About me</h2>
 
       <p className="about-text text-lg font-medium mb-4 max-w-xl leading-relaxed text-gray">
-        I’m studying Coded Design at the Danish School of Media and Journalism.
-        I work with a variety of tools including —{" "}
+        I’m studying{" "}
+        <a
+          href="https://www.dmjx.dk/uddannelser/coded-design"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Coded Design
+        </a>{" "}
+        at the Danish School of Media and Journalism. I work with a variety of
+        tools including —{" "}
         {[
           [
             "JavaScript",
