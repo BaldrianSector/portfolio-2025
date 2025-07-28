@@ -1,7 +1,7 @@
 const ArticleHeader = ({ blok }) => {
   const isVideo =
-    blok.cover?.filename?.endsWith(".mp4") ||
-    blok.cover?.filename?.endsWith(".webm");
+    blok.cover?.filename?.toLowerCase().endsWith(".mp4") ||
+    blok.cover?.filename?.toLowerCase().endsWith(".webm");
 
   return (
     <header className="flex flex-col items-center justify-center ">
