@@ -78,7 +78,7 @@ const ProjectSection = () => {
   return (
     <section className="px-10 flex flex-col items-start max-w-6xl mx-auto py-16">
       <h2 className="text-4xl font-bold mb-6">✦ Featured Projects</h2>
-      <p className="text-lg font-medium mb-20 max-w-xl leading-relaxed">
+      <p className="text-lg font-medium mb-20 max-w-xl leading-relaxed text-gray">
         I obsess over code. My brain is built for problem solving and I always
         put extreme amounts of care into anything I make.
       </p>

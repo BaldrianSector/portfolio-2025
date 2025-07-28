@@ -11,6 +11,7 @@ import HeroSection from "./components/HeroSection";
 import ProjectSection from "./components/ProjectSection";
 import ProjectArticle from "./components/ProjectArticle";
 import AboutSection from "./components/AboutSection";
+import ContactSection from "./components/ContactSection";
 import MenuOverlay from "./components/MenuOverlay";
 import NotFound from "./components/NotFound";
 
@@ -48,8 +49,7 @@ function AppLayout() {
                 <AboutSection />
               </Section>
               <Section id="contact" className="contact bg-light text-dark">
-                This is the contact section. It contains a form or contact
-                information for reaching out to the designer.
+                <ContactSection />
               </Section>
             </>
           }

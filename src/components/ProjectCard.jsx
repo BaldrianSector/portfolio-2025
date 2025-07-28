@@ -5,7 +5,7 @@ const ProjectCard = ({ title, description, asset, aspect }) => {
   const aspectClass = aspect || "aspect-video";
 
   const mediaClassName =
-    "w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-105";
+    "w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-105 shadow-lg";
 
   return (
     <div className="max-w-xl cursor-pointer">
