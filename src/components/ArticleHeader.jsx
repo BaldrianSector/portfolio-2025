@@ -8,7 +8,9 @@ const ArticleHeader = ({ blok }) => {
       <div className="">
         <div className="title-and-year flex  justify-between">
           {/* Title */}
-          {blok.title && <h1 className="text-5xl font-bold">{blok.title}</h1>}
+          {blok.title && (
+            <h1 className="text-4xl sm:text-5xl font-bold">{blok.title}</h1>
+          )}
           {/* Year */}
           {blok.year && (
             <p className="text-lg self-end font-reem text-gray">
@@ -23,13 +25,13 @@ const ArticleHeader = ({ blok }) => {
           </p>
         )}
         {/* Link */}
-        {blok.link && (
+        {blok.linktext && (
           <div className="flex justify-between items-center pt-4 pb-10">
             <a
               href={blok.link.url}
               target={blok.link.target || "_blank"}
               rel="noopener noreferrer"
-              className=" font-bold font-void text-lg underline underline-offset-4 decoration-2"
+              className="font-bold font-void text-lg underline underline-offset-4 decoration-2"
             >
               {blok.linktext}
             </a>
@@ -61,18 +63,6 @@ const ArticleHeader = ({ blok }) => {
             />
           )}
         </div>
-      )}
-
-      {/* Link */}
-      {blok.link && blok.link_text && (
-        <a
-          href={blok.link.url}
-          target={blok.link.target || "_blank"}
-          rel="noopener noreferrer"
-          className="inline-block mt-6 px-5 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition"
-        >
-          {blok.linktext}
-        </a>
       )}
     </header>
   );
