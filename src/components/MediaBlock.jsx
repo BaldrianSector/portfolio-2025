@@ -1,7 +1,7 @@
 const MediaBlock = ({ blok }) => {
   if (!blok.asset || !blok.asset.filename) {
     return (
-      <div className="bg-gray-800 text-white">
+      <div className="bg-gray-800 text-dark underline">
         <p>No media available for this block.</p>
       </div>
     );
