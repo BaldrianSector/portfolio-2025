@@ -69,8 +69,12 @@ const ProjectSection = () => {
 
   if (!projects.length) return <div className="p-8">Loading projects…</div>;
 
-  const sortedProjects = [...projects].sort((a, b) => {
-    const aPriority = a.content.priority ?? 9999; // fallback for missing
+  const visibleProjects = projects.filter(
+    (project) => project.content.visible !== false
+  );
+
+  const sortedProjects = [...visibleProjects].sort((a, b) => {
+    const aPriority = a.content.priority ?? 9999;
     const bPriority = b.content.priority ?? 9999;
     return aPriority - bPriority;
   });
