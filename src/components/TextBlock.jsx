@@ -1,7 +1,9 @@
+import ReactMarkdown from "react-markdown";
+
 const TextBlock = ({ blok }) => (
-  <p className="py-12 text-lg max-w-2xl mx-auto text-gray-300 my-4 text-dark font-normal">
-    {blok.text}
-  </p>
+  <div className="prose prose-invert py-12 max-w-2xl mx-auto my-4 text-dark font-normal">
+    <ReactMarkdown>{blok.text}</ReactMarkdown>
+  </div>
 );
 
 export default TextBlock;
