@@ -9,7 +9,7 @@ const ArticleHeader = ({ blok }) => {
         <div className="title-and-year flex  justify-between">
           {/* Title */}
           {blok.title && (
-            <h1 className="text-4xl sm:text-5xl font-bold">{blok.title}</h1>
+            <h1 className="text-3xl sm:text-5xl font-bold">{blok.title}</h1>
           )}
           {/* Year */}
           {blok.year && (
