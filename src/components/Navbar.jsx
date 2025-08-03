@@ -23,7 +23,7 @@ const Navbar = ({ isMenuOpen, handleMenuToggle }) => {
             style={{ filter: "invert(1)" }}
           />
         </a>
-        <div className="hidden xs:flex flex-col text-xs">
+        <div className="hidden xs:flex flex-col text-[0.65rem]">
           <a href="/#" className="">
             Coded Designer
           </a>
@@ -37,7 +37,7 @@ const Navbar = ({ isMenuOpen, handleMenuToggle }) => {
       <div className="flex gap-4 items-center leading-none">
         <a
           href="#"
-          className="uppercase text-2xl font-reem text-white tracking-tight"
+          className="uppercase text-[1.55rem] font-reem text-white tracking-tight"
         >
           Baldrian
         </a>
