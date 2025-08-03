@@ -130,6 +130,10 @@ body {
   color: #fff;
 }
 
+.contact-text a:hover {
+  color: #0e1010; /* Specific color for contact links */
+}
+
 /* ===== MENU FOOTER SPECIFIC STYLES ===== */
 
 /* Footer positioning */
@@ -160,6 +164,7 @@ body {
 .link a::after,
 .social a::after,
 .about-text a::after,
+.contact-text a::after,
 .menu-footer a::after {
   position: absolute;
   content: "";
@@ -173,6 +178,10 @@ body {
   transition: transform 0.3s cubic-bezier(0.6, 0, 0.4, 1);
 }
 
+.contact-text a::after {
+  background: #0e1010; /* Specific color for contact links underline */
+}
+
 .link a:after {
   top: calc(180%); /* Add a gap below text */
 }
@@ -181,12 +190,14 @@ body {
 .link a:hover::after,
 .social a:hover::after,
 .about-text a:hover::after,
+.contact-text a:hover::after,
 .menu-footer a:hover::after {
   transform: scaleX(1); /* Full width on hover */
   transform-origin: left; /* Changes direction for smooth effect */
 }
 
-.about-text a {
+.about-text a,
+.contact-text a {
   position: relative;
   text-decoration: none;
   color: inherit; /* Keep original color */
@@ -244,6 +255,13 @@ img {
 ::-webkit-selection {
   background: rgba(255, 255, 255, 0.8);
   color: #0e1010;
+}
+
+/* ===== CONTACT SECTION STYLES ===== */
+
+.contact-section a {
+  @apply font-playfair;
+  color: #2f74f3;
 }
 
 /* ===== RESPONSIVE STYLES ===== */
