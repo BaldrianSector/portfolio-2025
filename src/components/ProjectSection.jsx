@@ -90,7 +90,6 @@ const ProjectSection = () => {
         {sortedProjects.map((project, idx) => {
           const cardData = getProjectCardData(project);
 
-          console.log("Project Card Data:", cardData);
           return (
             <div
               key={project.uuid}
