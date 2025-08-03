@@ -14,9 +14,15 @@ const MediaBlock = ({ blok }) => {
     ext === "mp4" ? "video/mp4" : ext === "webm" ? "video/webm" : "";
 
   return (
-    <figure className="">
+    <figure className="w-full">
       {isVideo ? (
-        <video className="w-full" autoPlay muted loop nocontrols>
+        <video
+          className="w-full max-w-full block"
+          autoPlay
+          muted
+          loop
+          playsInline
+        >
           <source src={filename} type={mimeType} />
           Your browser does not support the video tag.
         </video>
@@ -24,7 +30,7 @@ const MediaBlock = ({ blok }) => {
         <img
           src={filename}
           alt={blok.description || "Media"}
-          className="w-full"
+          className="w-full max-w-full block"
         />
       )}
       {blok.description && (
