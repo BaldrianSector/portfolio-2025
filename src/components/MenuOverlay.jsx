@@ -2,9 +2,13 @@ import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 
 const links = [
-  { label: "01 Home", href: "#hero", img: "/assets/images/img-1.jpg" },
+  {
+    label: "01 Home",
+    href: "#hero",
+    img: "/assets/images/Standing-Portrait.jpg",
+  },
   { label: "02 Projects", href: "#projects", img: "/assets/images/img-2.jpg" },
-  { label: "03 About me", href: "#about", img: "/assets/images/img-3.jpg" },
+  { label: "03 About", href: "#about", img: "/assets/images/img-3.jpg" },
   { label: "04 Contact", href: "#contact", img: "/assets/images/img-4.jpg" },
 ];
 
@@ -91,7 +95,7 @@ export default function MenuOverlay({ isMenuOpen, handleMenuToggle }) {
           <div className="col-lg flex-1 hidden md:flex justify-center items-center">
             <div className="menu-preview-img h-full overflow-hidden">
               <img
-                src="/assets/images/img-1.jpg"
+                src="/assets/images/Standing-Portrait.jpg"
                 alt=""
                 className="w-full h-full object-cover"
               />
