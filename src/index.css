@@ -95,8 +95,13 @@ body {
 
 /* Extra spacing for menu links */
 .menu-links {
-  gap: 1.5em;
+  gap: 1.4em;
   line-height: 3.5em;
+}
+
+/* Padding for individual links for mobile */
+.link {
+  padding-top: 0.25em;
 }
 
 /* Individual link and social item containers */
