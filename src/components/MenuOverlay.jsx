@@ -138,7 +138,9 @@ export default function MenuOverlay({ isMenuOpen, handleMenuToggle }) {
         </div>
         <div className="col-sm flex gap-4">
           <a href="#">Origin</a>
-          <a href="#">Resume</a>
+          <a href="/assets/documents/Baldrian Sector - Resume 2025.pdf">
+            Resume
+          </a>
         </div>
       </div>
     </div>
