@@ -36,7 +36,7 @@ const Navbar = ({ isMenuOpen, handleMenuToggle }) => {
         {/* Right Side */}
         <div className="flex items-center gap-4">
           <a
-            href="#"
+            href="/#"
             onClick={isMenuOpen ? handleMenuToggle : null}
             className="hidden xs:block uppercase text-[1.75rem] font-reem text-white tracking-tight"
           >
