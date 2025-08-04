@@ -14,7 +14,11 @@ const ContactSection = () => {
       <p className="contact-text text-lg font-medium mb-4 max-w-xl leading-relaxed text-gray">
         You can contact me directly via email at{" "}
         <a href="mailto:baldriansector@gmail.com">baldriansector@gmail.com</a>{" "}
-        or on my phone at <a href="tel:+4527458765">+45 27 45 87 65</a>.
+        or on my phone at{" "}
+        <a href="tel:+4527458765" className="text-nowrap">
+          +45 27 45 87 65
+        </a>
+        .
       </p>
       <p className="contact-text text-lg font-medium mb-4 max-w-xl leading-relaxed text-gray">
         I’m also available on{" "}
