@@ -58,7 +58,7 @@ const Navbar = ({ isMenuOpen, handleMenuToggle }) => {
                 fill="currentColor"
               >
                 <path
-                  d="M3 12h18M3 6h18M3 18h18"
+                  d="M5 12h14M5 6h14M5 18h14"
                   stroke="currentColor"
                   strokeWidth="3"
                   strokeLinecap="square"
