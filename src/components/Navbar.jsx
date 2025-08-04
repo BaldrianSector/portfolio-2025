@@ -24,7 +24,7 @@ const Navbar = ({ isMenuOpen, handleMenuToggle }) => {
               style={{ filter: "invert(1)" }}
             />
           </a>
-          <div className="hidden xs:flex flex-col text-[0.65rem] leading-tight">
+          <div className="hidden xs:flex flex-col text-[0.66rem] leading-tight">
             <a href="/#">Coded Designer</a>
             <a href="/#">Copenhagen, Denmark</a>
           </div>
