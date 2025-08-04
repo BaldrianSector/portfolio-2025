@@ -165,6 +165,7 @@ body {
 .social a::after,
 .about-text a::after,
 .contact-text a::after,
+.article-text a::after,
 .menu-footer a::after {
   position: absolute;
   content: "";
@@ -178,7 +179,8 @@ body {
   transition: transform 0.3s cubic-bezier(0.6, 0, 0.4, 1);
 }
 
-.contact-text a::after {
+.contact-text a::after,
+.article-text a::after {
   background: #0e1010; /* Specific color for contact links underline */
 }
 
@@ -191,12 +193,14 @@ body {
 .social a:hover::after,
 .about-text a:hover::after,
 .contact-text a:hover::after,
+.article-text a:hover::after,
 .menu-footer a:hover::after {
   transform: scaleX(1); /* Full width on hover */
   transform-origin: left; /* Changes direction for smooth effect */
 }
 
 .about-text a,
+.article-text a,
 .contact-text a {
   position: relative;
   text-decoration: none;
