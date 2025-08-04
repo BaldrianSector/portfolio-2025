@@ -15,7 +15,10 @@ const Navbar = ({ isMenuOpen, handleMenuToggle }) => {
     >
       <div className="flex h-10 justify-between items-center pointer-events-auto">
         {/* Left Side */}
-        <div className="flex items-center gap-4">
+        <div
+          className="flex items-center gap-4"
+          onClick={isMenuOpen ? handleMenuToggle : null}
+        >
           <a href="/#" className="w-10">
             <img
               src="/assets/icons/logo.svg"
@@ -34,6 +37,7 @@ const Navbar = ({ isMenuOpen, handleMenuToggle }) => {
         <div className="flex items-center gap-4">
           <a
             href="#"
+            onClick={isMenuOpen ? handleMenuToggle : null}
             className="hidden xs:block uppercase text-[1.75rem] font-reem text-white tracking-tight"
           >
             Baldrian
