@@ -4,7 +4,7 @@ const Navbar = ({ isMenuOpen, handleMenuToggle }) => {
   return (
     <nav
       className="
-                fixed top-0 left-0 w-screen
+                fixed top-0 left-0 w-full
                 py-10 px-10
                 z-30
                 mix-blend-difference
@@ -15,23 +15,23 @@ const Navbar = ({ isMenuOpen, handleMenuToggle }) => {
     >
       <div className="flex justify-between items-center pointer-events-auto">
         {/* Left Side */}
-        <div className="flex items-center gap-2">
-          <a href="/#">
+        <div className="flex items-center gap-4">
+          <a href="/#" className="w-10">
             <img
               src="/assets/icons/logo.svg"
               alt="Logo"
-              className="w-11 select-none"
+              className="select-none"
               style={{ filter: "invert(1)" }}
             />
           </a>
-          <div className="hidden xs:flex flex-col text-[0.65rem]">
+          <div className="hidden xs:flex flex-col text-[0.65rem] leading-tight">
             <a href="/#">Coded Designer</a>
             <a href="/#">Copenhagen, Denmark</a>
           </div>
         </div>
 
         {/* Right Side */}
-        <div className="flex gap-4 items-center leading-none">
+        <div className="flex items-center gap-4">
           <a
             href="#"
             className="uppercase text-[1.55rem] font-reem text-white tracking-tight"
@@ -40,7 +40,7 @@ const Navbar = ({ isMenuOpen, handleMenuToggle }) => {
           </a>
           {/* Menu Toggle */}
           <div
-            className="relative w-[48px] h-6 cursor-pointer flex items-center justify-center text-2xl"
+            className="w-[18px] cursor-pointer flex items-center justify-center text-2xl"
             onClick={handleMenuToggle}
           >
             {/* Hamburger */}
