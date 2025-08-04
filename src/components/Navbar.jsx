@@ -40,7 +40,7 @@ const Navbar = ({ isMenuOpen, handleMenuToggle }) => {
           </a>
           {/* Menu Toggle */}
           <div
-            className="w-[26px] cursor-pointer flex font-reem items-center justify-center text-2xl"
+            className="w-[23px] cursor-pointer flex font-reem items-center justify-center text-2xl"
             onClick={handleMenuToggle}
           >
             {/* Hamburger */}
