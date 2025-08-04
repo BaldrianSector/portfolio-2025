@@ -184,7 +184,7 @@ body {
 
 .contact-text a::after,
 .article-text a::after {
-  background: #0e1010; /* Specific color for contact links underline */
+  background: #2f74f3; /* Specific color for contact links underline */
 }
 
 .link a:after {
@@ -210,6 +210,15 @@ body {
   color: inherit; /* Keep original color */
   will-change: transform;
   transition: color 0.5s;
+}
+
+/* ===== ARTICLE LINKS ===== */
+
+.article-text a {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #2f74f3; /* Specific color for article links */
+  white-space: nowrap;
 }
 
 /* ===== HERO SECTION STYLES ===== */
