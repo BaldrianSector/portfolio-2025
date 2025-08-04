@@ -13,7 +13,7 @@ const Navbar = ({ isMenuOpen, handleMenuToggle }) => {
                 pointer-events-none
             "
     >
-      <div className="flex justify-between items-center pointer-events-auto">
+      <div className="flex h-10 justify-between items-center pointer-events-auto">
         {/* Left Side */}
         <div className="flex items-center gap-4">
           <a href="/#" className="w-10">
@@ -34,35 +34,59 @@ const Navbar = ({ isMenuOpen, handleMenuToggle }) => {
         <div className="flex items-center gap-4">
           <a
             href="#"
-            className="uppercase text-[1.55rem] font-reem text-white tracking-tight"
+            className="hidden xs:block uppercase text-[1.75rem] font-reem text-white tracking-tight"
           >
             Baldrian
           </a>
           {/* Menu Toggle */}
           <div
-            className="w-[18px] cursor-pointer flex items-center justify-center text-2xl"
+            className="w-[26px] cursor-pointer flex font-reem items-center justify-center text-2xl"
             onClick={handleMenuToggle}
           >
             {/* Hamburger */}
-            <p
+            <div
               className={`absolute transition-all duration-300 ${
                 isMenuOpen
                   ? "opacity-0 translate-y-[-10px] rotate-[-5deg]"
                   : "opacity-100"
               } text-white select-none`}
             >
-              ☰
-            </p>
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M3 12h18M3 6h18M3 18h18"
+                  stroke="currentColor"
+                  strokeWidth="3"
+                  strokeLinecap="square"
+                />
+              </svg>
+            </div>
             {/* Close X */}
-            <p
+            <div
               className={`absolute transition-all duration-300 ${
                 isMenuOpen
                   ? "opacity-100"
                   : "opacity-0 translate-x-[-5px] translate-y-[10px] rotate-[5deg]"
               } text-white select-none`}
             >
-              ✕
-            </p>
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M18 6L6 18M6 6l12 12"
+                  stroke="currentColor"
+                  strokeWidth="3"
+                  strokeLinecap="square"
+                />
+              </svg>
+            </div>
           </div>
         </div>
       </div>
