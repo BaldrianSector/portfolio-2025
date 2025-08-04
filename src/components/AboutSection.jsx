@@ -53,7 +53,7 @@ const AboutSection = () => {
       <img
         src="/assets/images/Baldrian Portrait.jpg"
         alt="Portrait of Baldrian"
-        className="max-w-sm mb-10 shadow-lg"
+        className="w-full max-w-sm mb-10 shadow-lg"
       />
 
       <h2 className="text-4xl font-bold mb-4">❖ About me</h2>
