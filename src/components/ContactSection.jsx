@@ -1,7 +1,7 @@
 const ContactSection = () => {
   return (
     <div className="contact-section flex flex-col items-start mx-10 pt-10">
-      <h2 className="text-4xl font-bold mb-4">@ Get in contact</h2>
+      <h2 className="text-4xl font-bold mb-4">@ Contact me</h2>
 
       <p className="contact-text text-lg font-medium mb-4 max-w-xl leading-relaxed text-gray">
         I’m always open to new opportunities and collaborations. Whether you
