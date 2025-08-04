@@ -134,10 +134,14 @@ export default function MenuOverlay({ isMenuOpen, handleMenuToggle }) {
       </div>
       <div className="menu-footer flex justify-between px-10 pb-6">
         <div className="col-lg">
-          <a href="mailto:baldriansector@gmail.com">Email me</a>
+          <a href="mailto:baldriansector@gmail.com" className="text-nowrap">
+            Email me
+          </a>
         </div>
         <div className="col-sm flex gap-4">
-          <a href="#">Origin</a>
+          <a href="tel:+4527458765" className="text-nowrap">
+            Call me
+          </a>
           <a href="/assets/documents/Baldrian Sector - Resume 2025.pdf">
             Resume
           </a>
