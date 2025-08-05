@@ -38,7 +38,7 @@ const Navbar = ({ isMenuOpen, handleMenuToggle }) => {
           <a
             href="/#"
             onClick={isMenuOpen ? handleMenuToggle : null}
-            className="hidden xs:block uppercase text-[1.75rem] font-reem text-white tracking-tight"
+            className="hidden xs:block uppercase text-[1.75rem] font-reem text-white tracking-tight translate-y-[1px]"
           >
             Baldrian
           </a>
