@@ -9,6 +9,7 @@ const HeroSection = () => {
             src="/assets/videos/bolarbear.mp4"
             autoPlay
             muted
+            playsInline
             loop
             className="absolute top-1/2 left-1/2 w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 pointer-events-none"
           ></video>

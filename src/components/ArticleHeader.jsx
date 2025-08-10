@@ -72,6 +72,7 @@ const ArticleHeader = ({ blok }) => {
                 src={blok.cover.filename}
                 autoPlay
                 muted
+                playsInline
                 loop
                 className="w-full"
               />

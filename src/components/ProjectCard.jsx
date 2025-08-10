@@ -16,8 +16,8 @@ const ProjectCard = ({ title, description, asset, aspect }) => {
               src={url}
               autoPlay
               muted
-              loop
               playsInline
+              loop
               className={mediaClassName}
             />
           ) : (
