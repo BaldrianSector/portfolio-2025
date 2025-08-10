@@ -187,8 +187,25 @@ body {
   background: #2f74f3; /* Specific color for contact links underline */
 }
 
-.link a:after {
-  top: calc(180%); /* Add a gap below text */
+.link a::after {
+  top: calc(180%);
+}
+
+/* Social links underline responsive adjustments */
+
+@media (max-height: 840px) {
+  .link a::after {
+    top: calc(160%);
+  }
+}
+
+@media (max-height: 700px) {
+  .link a::after {
+    top: calc(100%);
+  }
+  .social a::after {
+    top: calc(115%);
+  }
 }
 
 /* Hover effect - reveals underline */
