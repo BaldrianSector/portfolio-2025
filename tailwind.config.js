@@ -24,8 +24,8 @@ export default {
     screens: {
       xs: '438px',
       sm: '640px',
-      'short-sm': { raw: '(max-height: 629px)' },
-      'short-md': { raw: '(max-height: 723px)' },
+      'short-sm': { raw: '(max-height: 700px)' },
+      'short-md': { raw: '(max-height: 840px)' },
     },
   },
   plugins: [],
