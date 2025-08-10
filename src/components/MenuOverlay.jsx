@@ -97,18 +97,18 @@ export default function MenuOverlay({ isMenuOpen, handleMenuToggle }) {
               <img
                 src="/assets/images/Standing-Portrait.jpg"
                 alt=""
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-[60%_20%]"
               />
             </div>
           </div>
-          <div className="col-sm flex-1 flex flex-col gap-10">
-            <div className="menu-links flex flex-col gap-2">
+          <div className="col-sm flex-1 flex flex-col short-sm:!flex-row gap-10 short-sm:!gap-20">
+            <div className="menu-links flex flex-col gap-2 text-nowrap short-md:!gap-0 short-sm:!leading-[1]">
               {links.map((link) => (
                 <div className="link" key={link.label}>
                   <a
                     href={link.href}
                     data-img={link.img}
-                    className="text-3xl block"
+                    className="text-3xl block short-sm:!text-2xl"
                     onClick={(e) => handleLinkClick(e, link.href)}
                   >
                     {link.label}
@@ -116,7 +116,7 @@ export default function MenuOverlay({ isMenuOpen, handleMenuToggle }) {
                 </div>
               ))}
             </div>
-            <div className="menu-socials flex flex-col gap-2">
+            <div className="menu-socials flex flex-col gap-2  short-sm:pt-3 short-sm:!gap-[1.0rem] short-sm:!leading-[1.2]">
               {socials.map((social) => (
                 <div className="social" key={social.name}>
                   <a
