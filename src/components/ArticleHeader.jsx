@@ -7,9 +7,9 @@ const ArticleHeader = ({ blok }) => {
   const handleScrollDown = () => {
     if (scrollTargetRef.current) {
       gsap.to(window, {
-        duration: 1,
+        duration: 1.2,
         scrollTo: scrollTargetRef.current.offsetTop - 20,
-        ease: "power2.out",
+        ease: "power3.out",
       });
     }
   };
