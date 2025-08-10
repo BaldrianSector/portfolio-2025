@@ -4,7 +4,7 @@ const Section = ({ id, children, className = "" }) => {
   return (
     <section
       id={id}
-      className={`my-section ${className} min-h-screen w-full pt-20 pb-20`}
+      className={`my-section ${className} min-h-svh pt-20 pb-20`}
     >
       {children}
     </section>
