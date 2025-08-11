@@ -1,4 +1,3 @@
-/** @type {import('tailwindcss').Config} */
 export default {
   content: [
     "./index.html",
@@ -6,20 +5,21 @@ export default {
   ],
   theme: {
     extend: {
+      colors: {
+        'solid-black': 'var(--color-solid-black)',
+        'black': 'var(--color-black)',
+        'white': 'var(--color-white)',
+        'light': 'var(--color-light)',
+        'dark': 'var(--color-dark)',
+        'gray': 'var(--color-gray)',
+        'link': 'var(--color-link)',
+        'contact-link': 'var(--color-contact-link)',
+      },
       fontFamily: {
         inter: ['Inter', 'sans-serif'],
         reem: ['Reem Kufi', 'sans-serif'],
         playfair: ['"Playfair Display"', 'serif'],
       },
-    },
-    colors: {
-      'solid-black': '#000000',
-      'black': '#0F0F0F',
-      'white': '#FFFFFF',
-      'light': '#D9D9D9',
-      'dark': '#0E1010',
-      'gray': '#656565',
-      'link': '#FF6347',
     },
     screens: {
       xs: '438px',
@@ -29,4 +29,4 @@ export default {
     },
   },
   plugins: [],
-}
+};
