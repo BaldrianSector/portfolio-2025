@@ -87,10 +87,10 @@ export default function MenuOverlay({ isMenuOpen, handleMenuToggle }) {
   return (
     <div
       ref={overlayRef}
-      className="menu-overlay z-20 fixed top-0 left-0 w-screen h-lvh bg-[#0f0f0f]"
+      className="menu-overlay z-20 fixed top-0 left-0 w-screen"
       style={{ pointerEvents: isMenuOpen ? "auto" : "none" }}
     >
-      <div className="menu-content flex justify-center items-center h-full">
+      <div className="menu-content flex justify-center items-center">
         <div className="menu-items flex gap-10 w-full px-10">
           <div className="col-lg flex-1 hidden md:flex justify-center items-center">
             <div className="menu-preview-img h-full overflow-hidden">

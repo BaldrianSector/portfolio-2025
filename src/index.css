@@ -16,14 +16,14 @@
 
 body {
   color: var(--color-light);
-  background-color: var(--color-dark);
+  background-color: var(--color-black);
 }
 
 /* --- Menu Overlay Styles --- */
 .menu-overlay {
   position: fixed;
   width: 100vw;
-  height: 100svh;
+  height: 100dvh;
   background-color: var(--color-black);
   top: 0;
   left: 0;
@@ -291,17 +291,17 @@ img {
 
 ::selection {
   background: rgba(255, 255, 255, 0.8);
-  color: var(--color-dark);
+  color: var(--color-black);
 }
 
 ::-moz-selection {
   background: rgba(255, 255, 255, 0.8);
-  color: var(--color-dark);
+  color: var(--color-black);
 }
 
 ::-webkit-selection {
   background: rgba(255, 255, 255, 0.8);
-  color: var(--color-dark);
+  color: var(--color-black);
 }
 
 /* ===== CONTACT SECTION STYLES ===== */

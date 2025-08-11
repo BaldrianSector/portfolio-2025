@@ -39,16 +39,16 @@ function AppLayout() {
           path="/"
           element={
             <>
-              <Section id="hero" className="hero bg-dark">
+              <Section id="hero" className="hero bg-black">
                 <HeroSection />
               </Section>
-              <Section id="projects" className="projects bg-light text-dark">
+              <Section id="projects" className="projects bg-light text-black">
                 <ProjectSection />
               </Section>
-              <Section id="about" className="about bg-dark">
+              <Section id="about" className="about bg-black">
                 <AboutSection />
               </Section>
-              <Section id="contact" className="contact bg-light text-dark">
+              <Section id="contact" className="contact bg-light text-black">
                 <ContactSection />
               </Section>
             </>
@@ -62,7 +62,7 @@ function AppLayout() {
         <Route path="*" element={<NotFound />} />
       </Routes>
 
-      <footer className="bg-dark text-light p-4 text-center">
+      <footer className="bg-black text-light p-4 text-center">
         <p className="text-sm font-reem">
           © {new Date().getFullYear()} Made with 💙 in Copenhagen
         </p>
