@@ -26,7 +26,8 @@ const ProjectArticle = () => {
     fetchProject();
   }, [slug, storyblokApi]);
 
-  if (story === null) return <div className="p-8">Loading…</div>;
+  if (story === null)
+    return <div className="loading-element bg-light h-lvh"></div>;
   if (story === false) return <NotFound />; // Render NotFound component if story is false
 
   return (
