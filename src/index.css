@@ -340,5 +340,5 @@ img {
 
 .cover-image {
   opacity: 0;
-  transform: translateY(40px) scale(0.95);
+  transform: translateY(20px) scale(0.95);
 }

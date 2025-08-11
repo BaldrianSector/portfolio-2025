@@ -32,7 +32,7 @@ const ArticleHeader = ({ blok }) => {
       stagger: 0.15,
       duration: 0.8,
       ease: "power3.out",
-      delay: 0.2,
+      delay: 0.25,
     });
 
     // Animate the cover image separately with a longer delay
@@ -42,7 +42,7 @@ const ArticleHeader = ({ blok }) => {
         opacity: 1,
         y: 0,
         scale: 1,
-        duration: 1,
+        duration: 0.6,
         ease: "power3.out",
         delay: 0.6,
       });
