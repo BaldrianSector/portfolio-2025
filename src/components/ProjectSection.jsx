@@ -67,7 +67,7 @@ const ProjectSection = () => {
       : {};
   }
 
-  if (!projects.length) return <div className="p-8">Loading projects…</div>;
+  if (!projects.length) return <div className="p-8 bg-light"></div>;
 
   const visibleProjects = projects.filter(
     (project) => project.content.visible !== false
@@ -80,7 +80,7 @@ const ProjectSection = () => {
   });
 
   return (
-    <section className="px-10 flex flex-col items-start max-w-6xl mx-auto py-16">
+    <section className="px-10 flex flex-col items-start max-w-6xl mx-auto py-8">
       <h2 className="text-4xl font-bold mb-6">✦ Featured Projects</h2>
       <p className="text-lg font-medium mb-20 max-w-xl leading-relaxed text-gray">
         I obsess over code. My brain is built for problem solving and I always
