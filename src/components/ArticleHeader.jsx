@@ -104,7 +104,7 @@ const ArticleHeader = ({ blok }) => {
         </div>
 
         {blok.cover?.filename && (
-          <div className="cover-image mt-8 overflow-hidden">
+          <div className="cover-image mt-8 overflow-hidden -mx-10 md:max-w-3xl">
             {isVideo ? (
               <video
                 src={blok.cover.filename}
