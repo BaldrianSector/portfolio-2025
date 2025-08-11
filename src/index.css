@@ -332,3 +332,13 @@ img {
     display: none;
   }
 }
+
+.animate-item {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.cover-image {
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+}

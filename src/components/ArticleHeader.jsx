@@ -25,38 +25,26 @@ const ArticleHeader = ({ blok }) => {
     const elemsToAnimate =
       containerRef.current.querySelectorAll(".animate-item");
 
-    // Set initial state
-    gsap.set(elemsToAnimate, {
-      opacity: 0,
-      y: 30,
-    });
-
-    // Animate in with stagger
+    // Animate in with stagger (no need to set initial state, it's in CSS)
     gsap.to(elemsToAnimate, {
       opacity: 1,
       y: 0,
       stagger: 0.15,
       duration: 0.8,
       ease: "power3.out",
-      delay: 0.2, // Small delay to ensure everything is rendered
+      delay: 0.2,
     });
 
     // Animate the cover image separately with a longer delay
     const coverElement = containerRef.current.querySelector(".cover-image");
     if (coverElement) {
-      gsap.set(coverElement, {
-        opacity: 0,
-        y: 40,
-        scale: 0.95,
-      });
-
       gsap.to(coverElement, {
         opacity: 1,
         y: 0,
         scale: 1,
         duration: 1,
         ease: "power3.out",
-        delay: 0.6, // Animate after the text elements
+        delay: 0.6,
       });
     }
   }, []);

@@ -26,6 +26,11 @@ const ProjectArticle = () => {
     fetchProject();
   }, [slug, storyblokApi]);
 
+  // Scroll to top when story loads or slug changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [story, slug]);
+
   if (story === null)
     return <div className="loading-element bg-light h-lvh"></div>;
   if (story === false) return <NotFound />; // Render NotFound component if story is false
