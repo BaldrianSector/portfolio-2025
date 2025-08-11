@@ -34,7 +34,7 @@ const ProjectSection = () => {
       if (!el) return;
       gsap.fromTo(
         el,
-        { y: 40, opacity: 0 },
+        { y: -40, opacity: 0 },
         {
           y: 0,
           opacity: 1,
@@ -42,7 +42,7 @@ const ProjectSection = () => {
           ease: "power3.inOut",
           scrollTrigger: {
             trigger: el,
-            start: "top 95%",
+            start: "top 80%",
             toggleActions: "play none none none",
           },
         }

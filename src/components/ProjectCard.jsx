@@ -1,4 +1,8 @@
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+
 const ProjectCard = ({ title, description, asset, aspect }) => {
+  const cardRef = useRef();
   const url = asset?.filename || null;
   const isVideo = url ? /\.(mp4|webm|mov)$/i.test(url) : false;
 
@@ -7,8 +11,39 @@ const ProjectCard = ({ title, description, asset, aspect }) => {
   const mediaClassName =
     "w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-105 shadow-lg";
 
+  useEffect(() => {
+    const card = cardRef.current;
+    if (!card) return;
+
+    const textElements = [card.querySelector("h3"), card.querySelector("p")];
+
+    // Set initial state
+    gsap.set(textElements, { y: "-100%", opacity: 0 });
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          gsap.to(textElements, {
+            y: "0%",
+            delay: 0.55,
+            opacity: 1,
+            duration: 1,
+            stagger: 0.15,
+            ease: "power3.out",
+          });
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    observer.observe(card);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="max-w-xl cursor-pointer">
+    <div ref={cardRef} className="max-w-xl cursor-pointer">
       <div className={`overflow-hidden ${aspectClass}`}>
         {url &&
           (isVideo ? (
