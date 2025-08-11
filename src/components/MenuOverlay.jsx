@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const links = [
   {
@@ -24,6 +25,8 @@ const socials = [
 
 export default function MenuOverlay({ isMenuOpen, handleMenuToggle }) {
   const overlayRef = useRef();
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     if (isMenuOpen) {
@@ -57,30 +60,15 @@ export default function MenuOverlay({ isMenuOpen, handleMenuToggle }) {
   const handleLinkClick = (e, href) => {
     e.preventDefault();
 
-    // Find the target element
-    const target = document.querySelector(href);
+    // Close the menu first
+    handleMenuToggle();
 
-    if (target) {
-      // Close the menu first
-      handleMenuToggle();
-
-      // Add a small delay to let the menu close, then scroll
-      setTimeout(() => {
-        gsap.to(window, {
-          duration: 1.5,
-          scrollTo: {
-            y: target,
-            offsetY: 0, // Adjust if you have a fixed header
-          },
-          ease: "power3.out",
-        });
-      }, 100);
+    // If we're not on the home page, navigate there first
+    if (location.pathname !== "/") {
+      navigate("/" + href);
     } else {
-      console.error("❌ Target element not found for:", href);
-      console.log(
-        "🔍 All elements with IDs:",
-        Array.from(document.querySelectorAll("[id]")).map((el) => `#${el.id}`)
-      );
+      // Already on home page, navigate with hash
+      navigate(href);
     }
   };
 
@@ -116,7 +104,7 @@ export default function MenuOverlay({ isMenuOpen, handleMenuToggle }) {
                 </div>
               ))}
             </div>
-            <div className="menu-socials flex flex-col gap-2  short-sm:pt-3 short-sm:!gap-[1.0rem] short-sm:!leading-[1.2]">
+            <div className="menu-socials flex flex-col gap-2 short-sm:pt-3 short-sm:!gap-[1.0rem] short-sm:!leading-[1.2]">
               {socials.map((social) => (
                 <div className="social" key={social.name}>
                   <a

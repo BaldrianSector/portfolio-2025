@@ -1,8 +1,14 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 import Section from "./components/Section";
@@ -19,10 +25,62 @@ gsap.registerPlugin(useGSAP, ScrollToPlugin);
 function AppLayout() {
   const container = useRef();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   function handleMenuToggle() {
     setIsMenuOpen((prev) => !prev);
   }
+
+  // Handle hash scrolling
+  useEffect(() => {
+    const handleHashScroll = () => {
+      if (location.hash) {
+        const sectionId = location.hash.substring(1); // Remove #
+
+        // If we're not on the home page, navigate there first
+        if (location.pathname !== "/") {
+          navigate("/" + location.hash);
+          return;
+        }
+
+        // Small delay to ensure DOM is ready
+        setTimeout(() => {
+          const element = document.getElementById(sectionId);
+          if (element) {
+            gsap.to(window, {
+              duration: 1,
+              scrollTo: {
+                y: element,
+              },
+              ease: "power2.inOut",
+            });
+          }
+        }, 100);
+      }
+    };
+
+    handleHashScroll();
+  }, [location, navigate]);
+
+  // Handle navigation from project pages back to home sections
+  useEffect(() => {
+    if (location.pathname === "/" && location.hash) {
+      const sectionId = location.hash.substring(1);
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          gsap.to(window, {
+            duration: 1,
+            scrollTo: {
+              y: element,
+            },
+            ease: "power2.inOut",
+          });
+        }
+      }, 200); // Slightly longer delay when coming from another page
+    }
+  }, [location.pathname, location.hash]);
 
   return (
     <div ref={container} className="App">
