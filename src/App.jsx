@@ -3,7 +3,6 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import "./App.css";
 
 import Navbar from "./components/Navbar";
 import Section from "./components/Section";
