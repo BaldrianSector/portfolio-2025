@@ -1,8 +1,101 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import { gsap } from "gsap";
 
 const Navbar = ({ isMenuOpen, handleMenuToggle }) => {
+  const navRef = useRef(null);
+  const lastScrollY = useRef(0);
+  const ticking = useRef(false);
+
+  useEffect(() => {
+    const nav = navRef.current;
+    if (!nav) return;
+
+    // Scroll threshold - adjust this value to change when navbar hides
+    const SCROLL_THRESHOLD = 28; // Change this number (pixels)
+    let isResizing = false;
+    let hasScrolled = false; // Track if user has scrolled yet
+
+    // Ensure navbar starts at top position on load
+    gsap.set(nav, { y: 0 });
+
+    const updateNavbar = () => {
+      // Skip animation if window is being resized or menu is open
+      if (isResizing || isMenuOpen) {
+        ticking.current = false;
+        return;
+      }
+
+      const currentScrollY = window.scrollY;
+
+      // Only animate if scroll position actually changed significantly
+      const scrollDifference = Math.abs(currentScrollY - lastScrollY.current);
+      if (scrollDifference < 5) {
+        ticking.current = false;
+        return;
+      }
+
+      // Mark that user has scrolled (prevents initial animation on page load)
+      if (!hasScrolled) {
+        hasScrolled = true;
+        lastScrollY.current = currentScrollY;
+        ticking.current = false;
+        return;
+      }
+
+      if (
+        currentScrollY > lastScrollY.current &&
+        currentScrollY > SCROLL_THRESHOLD
+      ) {
+        // Scrolling down & past threshold - hide navbar
+        gsap.to(nav, {
+          y: -100,
+          duration: 0.3,
+          ease: "power2.out",
+        });
+      } else if (
+        currentScrollY < lastScrollY.current ||
+        currentScrollY <= SCROLL_THRESHOLD
+      ) {
+        // Scrolling up or at top - show navbar
+        gsap.to(nav, {
+          y: 0,
+          duration: 0.4,
+          ease: "power2.out",
+        });
+      }
+
+      lastScrollY.current = currentScrollY;
+      ticking.current = false;
+    };
+
+    const handleScroll = () => {
+      if (!ticking.current && !isResizing && !isMenuOpen) {
+        requestAnimationFrame(updateNavbar);
+        ticking.current = true;
+      }
+    };
+
+    const handleResize = () => {
+      isResizing = true;
+      // Clear the resize flag after a short delay
+      setTimeout(() => {
+        isResizing = false;
+        lastScrollY.current = window.scrollY; // Update scroll position
+      }, 150);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleResize, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [isMenuOpen]);
+
   return (
     <nav
+      ref={navRef}
       className="
                 fixed top-0 left-0 w-full
                 py-10 px-10
