@@ -12,8 +12,7 @@ export default {
         'light': 'var(--color-light)',
         'dark': 'var(--color-dark)',
         'gray': 'var(--color-gray)',
-        'link': 'var(--color-link)',
-        'contact-link': 'var(--color-contact-link)',
+        'link': 'var(--color-link)'
       },
       fontFamily: {
         inter: ['Inter', 'sans-serif'],

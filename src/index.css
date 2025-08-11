@@ -5,8 +5,7 @@
   --color-light: #d9d9d9;
   --color-dark: #0e1010;
   --color-gray: #656565;
-  --color-link: #ff6347;
-  --color-contact-link: #2f74f3;
+  --color-link: #2f74f3;
 }
 
 /* Tailwind base */
@@ -146,7 +145,7 @@ body {
 }
 
 .contact-text a:hover {
-  color: var(--color-contact-link); /* Specific color for contact links */
+  color: var(--color-link); /* Specific color for contact links */
 }
 
 /* ===== MENU FOOTER SPECIFIC STYLES ===== */
@@ -197,7 +196,7 @@ body {
 .contact-text a::after,
 .article-text a::after {
   background: var(
-    --color-contact-link
+    --color-link
   ); /* Specific color for contact links underline */
 }
 
@@ -248,7 +247,7 @@ body {
 .article-text a {
   font-size: 1.2rem;
   font-weight: 400;
-  color: var(--color-contact-link); /* Specific color for article links */
+  color: var(--color-link); /* Specific color for article links */
   white-space: nowrap;
 }
 
@@ -308,7 +307,7 @@ img {
 
 .contact-section a {
   @apply font-playfair;
-  color: var(--color-contact-link);
+  color: var(--color-link);
 }
 
 /* ===== RESPONSIVE STYLES ===== */
