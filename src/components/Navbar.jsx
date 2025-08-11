@@ -27,7 +27,7 @@ const Navbar = ({ isMenuOpen, handleMenuToggle }) => {
               style={{ filter: "invert(1)" }}
             />
           </a>
-          <div className="hidden xs:flex flex-col text-[0.66rem] leading-tight text-nowrap">
+          <div className="hidden xs:flex flex-col text-[0.66rem] leading-tight text-nowrap translate-y-[1px]">
             <a href="/#">Coded Designer</a>
             <a href="/#">Copenhagen, Denmark</a>
           </div>
@@ -38,7 +38,7 @@ const Navbar = ({ isMenuOpen, handleMenuToggle }) => {
           <a
             href="/#"
             onClick={isMenuOpen ? handleMenuToggle : null}
-            className="hidden xs:block uppercase text-[1.75rem] font-reem text-white tracking-tight translate-y-[1px]"
+            className="hidden xs:block uppercase text-[1.75rem] font-reem text-white tracking-tight"
           >
             Baldrian
           </a>
