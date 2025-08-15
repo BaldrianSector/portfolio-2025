@@ -3,11 +3,10 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import {
-  BrowserRouter as Router,
+  HashRouter as Router, // Changed from BrowserRouter to HashRouter
   Routes,
   Route,
   useLocation,
-  useNavigate,
 } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
@@ -26,27 +25,21 @@ function AppLayout() {
   const container = useRef();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
-  const navigate = useNavigate();
 
   function handleMenuToggle() {
     setIsMenuOpen((prev) => !prev);
   }
 
-  // Handle hash scrolling
+  // Handle section scrolling with query parameters
   useEffect(() => {
-    const handleHashScroll = () => {
-      if (location.hash) {
-        const sectionId = location.hash.substring(1); // Remove #
+    const handleSectionScroll = () => {
+      const urlParams = new URLSearchParams(location.search);
+      const section = urlParams.get("section");
 
-        // If we're not on the home page, navigate there first
-        if (location.pathname !== "/") {
-          navigate("/" + location.hash);
-          return;
-        }
-
+      if (section && location.pathname === "/") {
         // Small delay to ensure DOM is ready
         setTimeout(() => {
-          const element = document.getElementById(sectionId);
+          const element = document.getElementById(section);
           if (element) {
             gsap.to(window, {
               duration: 1,
@@ -60,27 +53,31 @@ function AppLayout() {
       }
     };
 
-    handleHashScroll();
-  }, [location, navigate]);
+    handleSectionScroll();
+  }, [location]);
 
   // Handle navigation from project pages back to home sections
   useEffect(() => {
-    if (location.pathname === "/" && location.hash) {
-      const sectionId = location.hash.substring(1);
-      setTimeout(() => {
-        const element = document.getElementById(sectionId);
-        if (element) {
-          gsap.to(window, {
-            duration: 1,
-            scrollTo: {
-              y: element,
-            },
-            ease: "power2.inOut",
-          });
-        }
-      }, 200); // Slightly longer delay when coming from another page
+    if (location.pathname === "/" && location.search) {
+      const urlParams = new URLSearchParams(location.search);
+      const section = urlParams.get("section");
+
+      if (section) {
+        setTimeout(() => {
+          const element = document.getElementById(section);
+          if (element) {
+            gsap.to(window, {
+              duration: 1,
+              scrollTo: {
+                y: element,
+              },
+              ease: "power2.inOut",
+            });
+          }
+        }, 200);
+      }
     }
-  }, [location.pathname, location.hash]);
+  }, [location.pathname, location.search]);
 
   return (
     <div ref={container} className="App">

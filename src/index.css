@@ -307,6 +307,7 @@ img {
 
 .contact-section a {
   @apply font-playfair;
+  @apply italic;
   color: var(--color-link);
 }
 

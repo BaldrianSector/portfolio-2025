@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 
 const Navbar = ({ isMenuOpen, handleMenuToggle }) => {
@@ -112,29 +113,29 @@ const Navbar = ({ isMenuOpen, handleMenuToggle }) => {
           className="flex items-center gap-4"
           onClick={isMenuOpen ? handleMenuToggle : null}
         >
-          <a href="/#" className="w-10">
+          <Link to="/?section=hero" className="w-10">
             <img
               src="/assets/icons/logo.svg"
               alt="Logo"
               className="select-none"
               style={{ filter: "invert(1)" }}
             />
-          </a>
+          </Link>
           <div className="hidden xs:flex flex-col text-[0.66rem] leading-tight text-nowrap translate-y-[1px]">
-            <a href="/#">Coded Designer</a>
-            <a href="/#">Copenhagen, Denmark</a>
+            <Link to="/?section=hero">Coded Designer</Link>
+            <Link to="/?section=hero">Copenhagen, Denmark</Link>
           </div>
         </div>
 
         {/* Right Side */}
         <div className="flex items-center gap-4">
-          <a
-            href="/#"
+          <Link
+            to="/?section=hero"
             onClick={isMenuOpen ? handleMenuToggle : null}
             className="hidden xs:block uppercase text-[1.75rem] font-reem text-white tracking-tight"
           >
             Baldrian
-          </a>
+          </Link>
           {/* Menu Toggle */}
           <div
             className="w-[23px] cursor-pointer flex font-reem items-center justify-center text-2xl"

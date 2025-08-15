@@ -24,7 +24,7 @@ const HeroSection = () => {
         {/* Bottom-right text */}
         <p className="scramble-text relative self-end justify-self-end -bottom-10 -right-20 text-white text-lg z-10 col-start-1 row-start-1 max-w-[180px] indent-4 leading-5">
           Coding the future, shooting sunsets and{" "}
-          <span className="font-playfair">
+          <span className="font-playfair italic">
             occasionally jumping out of airplanes.
           </span>
         </p>
