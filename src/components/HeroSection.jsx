@@ -2,7 +2,7 @@ const HeroSection = () => {
   return (
     <>
       {/* Grid container */}
-      <div className="h-full w-full grid self-center py-28 px-28 max-w-[520px]">
+      <div className="h-full w-full grid self-center py-28 px-24 max-w-[520px]">
         {/* Video wrapper to control overflow */}
         <div className="relative overflow-hidden col-start-1 row-start-1 z-0">
           <video
