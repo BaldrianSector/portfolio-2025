@@ -93,7 +93,7 @@ function AppLayout() {
           path="/"
           element={
             <>
-              <Section id="hero" className="hero bg-black min-h-[780px]">
+              <Section id="hero" className="hero bg-black !min-h-[812px]">
                 <HeroSection />
               </Section>
               <Section id="projects" className="projects bg-light text-black">
@@ -116,7 +116,7 @@ function AppLayout() {
         <Route path="*" element={<NotFound />} />
       </Routes>
 
-      <footer className="bg-black text-light p-4 text-center m-0 h-12">
+      <footer className="bg-black text-light flex items-center justify-center m-0 h-12">
         <p className="text-sm font-reem">
           © {new Date().getFullYear()} Made with 💙 in Copenhagen
         </p>
