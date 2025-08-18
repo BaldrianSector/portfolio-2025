@@ -51,7 +51,7 @@ const AboutSection = () => {
   }, [currentIndex, roles.length]);
 
   return (
-    <div className="flex flex-col items-start mx-10 pt-10">
+    <div className="flex flex-col items-start mx-10 pt-10 max-w-xl w-full">
       <img
         src="/assets/images/Baldrian Portrait.jpg"
         alt="Portrait of Baldrian"
@@ -82,9 +82,9 @@ const AboutSection = () => {
             ["Three.js", "https://threejs.org/"],
             ["React", "https://reactjs.org/"],
             ["Vue", "https://vuejs.org/"],
+            ["StoryBlok", "https://www.storyblok.com/"],
             ["Unity", "https://unity.com/"],
             ["C#", "https://learn.microsoft.com/en-us/dotnet/csharp/"],
-            ["StoryBlok CMS", "https://www.storyblok.com/"],
             ["Generative AI"],
             ["Python", "https://www.python.org/"],
             ["Java", "https://www.oracle.com/java/"],

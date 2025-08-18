@@ -2,7 +2,7 @@ import TextReveal from "./TextReveal.jsx";
 
 const ContactSection = () => {
   return (
-    <div className="contact-section flex flex-col items-start mx-10 pt-10">
+    <div className="contact-section flex flex-col items-start mx-10 pt-10 max-w-xl w-full">
       <TextReveal animateOnScroll={true} delay={0.2}>
         <h2 className="text-4xl font-bold mb-4">@ Contact me</h2>
 

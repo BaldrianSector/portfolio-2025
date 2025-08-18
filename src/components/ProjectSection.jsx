@@ -97,6 +97,22 @@ const ProjectSection = () => {
         {sortedProjects.map((project, idx) => {
           const cardData = getProjectCardData(project);
 
+          if (!projects.length) {
+            const skeletons = Array(3).fill(0); // show 5 placeholders
+            return (
+              <section className="px-10 flex flex-col items-start mx-auto py-8">
+                <div className="space-y-20 flex flex-col align-items-start">
+                  {skeletons.map((_, idx) => (
+                    <div
+                      key={idx}
+                      className="project-card bg-gray-200 animate-pulse w-full h-64"
+                    />
+                  ))}
+                </div>
+              </section>
+            );
+          }
+
           return (
             <div
               key={project.uuid}
