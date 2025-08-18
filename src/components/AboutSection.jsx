@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 
+import TextReveal from "./TextReveal.jsx";
+
 const AboutSection = () => {
   const roles = [
     "a portrait and travel photographer.",
@@ -56,62 +58,64 @@ const AboutSection = () => {
         className="w-full max-w-sm mb-10 shadow-lg"
       />
 
-      <h2 className="text-4xl font-bold mb-4">❖ About me</h2>
+      <TextReveal animateOnScroll={true} delay={0.2}>
+        <h2 className="text-4xl font-bold mb-4">❖ About me</h2>
 
-      <p className="about-text text-lg font-medium mb-4 max-w-xl leading-relaxed text-gray">
-        I’m studying{" "}
-        <a
-          href="https://www.dmjx.dk/uddannelser/coded-design"
-          target="_blank"
-          rel="noopener noreferrer"
+        <p className="about-text text-lg font-medium mb-4 max-w-xl leading-relaxed text-gray">
+          I’m studying{" "}
+          <a
+            href="https://www.dmjx.dk/uddannelser/coded-design"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Coded Design
+          </a>{" "}
+          at the Danish School of Media and Journalism. I work with a variety of
+          tools including —{" "}
+          {[
+            [
+              "JavaScript",
+              "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+            ],
+            ["Figma", "https://www.figma.com/"],
+            ["Processing", "https://processing.org/"],
+            ["Three.js", "https://threejs.org/"],
+            ["React", "https://reactjs.org/"],
+            ["Vue", "https://vuejs.org/"],
+            ["Unity", "https://unity.com/"],
+            ["C#", "https://learn.microsoft.com/en-us/dotnet/csharp/"],
+            ["StoryBlok CMS", "https://www.storyblok.com/"],
+            ["Generative AI"],
+            ["Python", "https://www.python.org/"],
+            ["Java", "https://www.oracle.com/java/"],
+            ["QLab", "https://qlab.app/"],
+            ["TouchDesigner", "https://derivative.ca/"],
+          ].map(([name, url], index, array) => (
+            <span key={name}>
+              {url ? (
+                <a href={url} target="_blank" rel="noopener noreferrer">
+                  {name}
+                </a>
+              ) : (
+                <span>{name}</span>
+              )}
+              {index < array.length - 2 ? ", " : ""}
+              {index === array.length - 2 ? " and " : ""}
+            </span>
+          ))}
+          .
+        </p>
+
+        <p
+          className="text-lg font-medium max-w-xl leading-relaxed text-gray"
+          style={{ minHeight: "4.5rem" }}
         >
-          Coded Design
-        </a>{" "}
-        at the Danish School of Media and Journalism. I work with a variety of
-        tools including —{" "}
-        {[
-          [
-            "JavaScript",
-            "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
-          ],
-          ["Figma", "https://www.figma.com/"],
-          ["Processing", "https://processing.org/"],
-          ["Three.js", "https://threejs.org/"],
-          ["React", "https://reactjs.org/"],
-          ["Vue", "https://vuejs.org/"],
-          ["Unity", "https://unity.com/"],
-          ["C#", "https://learn.microsoft.com/en-us/dotnet/csharp/"],
-          ["3D‑printing"],
-          ["Generative AI"],
-          ["Python", "https://www.python.org/"],
-          ["Java", "https://www.oracle.com/java/"],
-          ["QLab", "https://qlab.app/"],
-          ["TouchDesigner", "https://derivative.ca/"],
-        ].map(([name, url], index, array) => (
-          <span key={name}>
-            {url ? (
-              <a href={url} target="_blank" rel="noopener noreferrer">
-                {name}
-              </a>
-            ) : (
-              <span>{name}</span>
-            )}
-            {index < array.length - 2 ? ", " : ""}
-            {index === array.length - 2 ? " and " : ""}
+          But I’m also{" "}
+          <span className="italic" ref={roleRef}>
+            {roles[currentIndex]}
           </span>
-        ))}
-        .
-      </p>
-
-      <p
-        className="text-lg font-medium max-w-xl leading-relaxed text-gray"
-        style={{ minHeight: "4.5rem" }}
-      >
-        But I’m also{" "}
-        <span className="italic" ref={roleRef}>
-          {roles[currentIndex]}
-        </span>
-      </p>
+        </p>
+      </TextReveal>
     </div>
   );
 };

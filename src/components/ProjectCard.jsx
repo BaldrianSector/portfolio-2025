@@ -92,7 +92,7 @@ const ProjectCard = ({ title, description, asset, aspect }) => {
         ease: "power4.out",
         scrollTrigger: {
           trigger: textBlock,
-          start: "top 75%",
+          start: "top 80%",
           once: true,
         },
       });
