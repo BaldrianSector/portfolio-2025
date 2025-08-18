@@ -59,7 +59,6 @@ const ProjectCard = ({ title, description, asset, aspect }) => {
             trigger: mediaBlock,
             start: "top 90%",
             once: true,
-            markers: true,
           },
         });
       }
