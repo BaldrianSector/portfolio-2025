@@ -49,16 +49,17 @@ const ProjectCard = ({ title, description, asset, aspect }) => {
 
       // Animate media
       if (mediaBlock) {
-        gsap.set(mediaBlock, { y: -40, opacity: 0 });
+        gsap.set(mediaBlock, { y: -40 });
         gsap.to(mediaBlock, {
           y: 0,
           opacity: 1,
-          duration: 1,
-          ease: "power4.out",
+          duration: 1.2,
+          ease: "power3.out",
           scrollTrigger: {
             trigger: mediaBlock,
-            start: "top 85%",
+            start: "top 90%",
             once: true,
+            markers: true,
           },
         });
       }
