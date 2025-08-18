@@ -116,7 +116,7 @@ function AppLayout() {
         <Route path="*" element={<NotFound />} />
       </Routes>
 
-      <footer className="bg-black text-light p-4 text-center">
+      <footer className="bg-black text-light p-4 text-center m-0 h-12">
         <p className="text-sm font-reem">
           © {new Date().getFullYear()} Made with 💙 in Copenhagen
         </p>
