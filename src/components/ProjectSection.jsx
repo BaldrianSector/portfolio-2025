@@ -5,6 +5,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Link } from "react-router-dom";
 import ProjectCard from "./ProjectCard";
 
+import TextReveal from "./TextReveal.jsx";
+
 gsap.registerPlugin(ScrollTrigger);
 
 const ProjectSection = () => {
@@ -81,11 +83,16 @@ const ProjectSection = () => {
 
   return (
     <section className="px-10 flex flex-col items-start max-w-6xl mx-auto py-8">
-      <h2 className="text-4xl font-bold mb-6">✦ Featured Projects</h2>
-      <p className="text-lg font-medium mb-20 max-w-xl leading-relaxed text-gray">
-        I obsess over code. My brain is built for problem solving and I always
-        put extreme amounts of care into anything I make.
-      </p>
+      <TextReveal animateOnScroll={true} delay={0.2}>
+        <h2 className="text-4xl font-bold mb-6 leading-tight">
+          ✦ Featured Projects
+        </h2>
+        <p className="text-lg font-medium mb-20 max-w-xl leading-relaxed text-gray">
+          I obsess over code. My brain is built for problem solving and I always
+          put extreme amounts of care into anything I make.
+        </p>
+      </TextReveal>
+
       <div className="space-y-20 flex flex-col align-items-start">
         {sortedProjects.map((project, idx) => {
           const cardData = getProjectCardData(project);
