@@ -17,12 +17,32 @@ export default function TextReveal({
   const lines = useRef([]);
   const lastWidth = useRef(window.innerWidth);
 
+  const waitForFonts = async () => {
+    try {
+      await document.fonts.ready;
+
+      const customFonts = ["Inter", "Reem Kufi", "Playfair Display"];
+      const fontCheckPromises = customFonts.map((fontFamily) => {
+        return document.fonts.check(`18px ${fontFamily}`);
+      });
+
+      await Promise.all(fontCheckPromises);
+      await new Promise((resolve) => setTimeout(resolve, 100));
+      return true;
+    } catch (error) {
+      console.warn("Font loading check failed, proceeding anyway:", error);
+      await new Promise((resolve) => setTimeout(resolve, 200));
+      return true;
+    }
+  };
+
   useGSAP(
     () => {
       if (!containerRef.current) return;
 
-      const splitAndAnimate = () => {
-        // Revert previous splits
+      const splitAndAnimate = async () => {
+        await waitForFonts();
+
         splitRefs.current.forEach((split) => split?.revert());
         splitRefs.current = [];
         lines.current = [];
@@ -83,18 +103,13 @@ export default function TextReveal({
 
       const handleResize = () => {
         const currentWidth = window.innerWidth;
-
-        // Only recalculate if width has changed
         if (currentWidth !== lastWidth.current) {
           splitAndAnimate();
           lastWidth.current = currentWidth;
         }
       };
 
-      // Initial animation
       splitAndAnimate();
-
-      // Recalculate only on width changes
       window.addEventListener("resize", handleResize);
 
       return () => {

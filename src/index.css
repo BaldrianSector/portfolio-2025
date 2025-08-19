@@ -268,6 +268,10 @@ section {
   overflow: hidden;
 }
 
+#hero {
+  visibility: hidden; /* Hide initially for animation */
+}
+
 .hero-img {
   position: absolute;
   top: 0;
@@ -279,6 +283,10 @@ section {
 
 .hero h1 {
   width: 80%;
+}
+
+.scramble-text-content > .line-mask {
+  padding: 0 0 1px 0;
 }
 
 /* ===== SELECTION COLOR ===== */

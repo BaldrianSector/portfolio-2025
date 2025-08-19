@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
-
 import TextReveal from "./TextReveal.jsx";
 
 const AboutSection = () => {
@@ -19,12 +18,10 @@ const AboutSection = () => {
 
   useEffect(() => {
     const animateRole = () => {
-      // Fade out
       gsap.to(roleRef.current, {
         opacity: 0,
         duration: 0.5,
         onComplete: () => {
-          // Choose a new index (different from current)
           let nextIndex;
           do {
             nextIndex = Math.floor(Math.random() * roles.length);
@@ -32,7 +29,6 @@ const AboutSection = () => {
 
           setCurrentIndex(nextIndex);
 
-          // Fade in
           gsap.fromTo(
             roleRef.current,
             { opacity: 0 },
@@ -42,9 +38,9 @@ const AboutSection = () => {
       });
     };
 
-    const interval = setInterval(animateRole, 4000); // every 4 seconds
+    const interval = setInterval(animateRole, 4000);
 
-    // Initial animation
+    // fade in first role on mount
     gsap.fromTo(roleRef.current, { opacity: 0 }, { opacity: 1, duration: 0.8 });
 
     return () => clearInterval(interval);

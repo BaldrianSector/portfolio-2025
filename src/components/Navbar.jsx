@@ -110,7 +110,7 @@ const Navbar = ({ isMenuOpen, handleMenuToggle }) => {
       <div className="flex h-10 justify-between items-center pointer-events-auto">
         {/* Left Side */}
         <div
-          className="flex items-center gap-4"
+          className="nav-item flex items-center gap-4"
           onClick={isMenuOpen ? handleMenuToggle : null}
         >
           <Link to="/?section=hero" className="w-10">
@@ -121,14 +121,18 @@ const Navbar = ({ isMenuOpen, handleMenuToggle }) => {
               style={{ filter: "invert(1)" }}
             />
           </Link>
-          <div className="hidden xs:flex flex-col text-[0.66rem] leading-tight text-nowrap translate-y-[1px]">
-            <Link to="/?section=hero">Coded Designer</Link>
-            <Link to="/?section=hero">Copenhagen, Denmark</Link>
+          <div className="nav-item hidden xs:flex flex-col text-[0.66rem] leading-tight text-nowrap translate-y-[1px]">
+            <Link to="/?section=hero" className="">
+              Coded Designer
+            </Link>
+            <Link to="/?section=hero" className="">
+              Copenhagen, Denmark
+            </Link>
           </div>
         </div>
 
         {/* Right Side */}
-        <div className="flex items-center gap-4">
+        <div className="nav-item flex items-center gap-4">
           <Link
             to="/?section=hero"
             onClick={isMenuOpen ? handleMenuToggle : null}
@@ -143,7 +147,7 @@ const Navbar = ({ isMenuOpen, handleMenuToggle }) => {
           >
             {/* Hamburger */}
             <div
-              className={`absolute transition-all duration-300 ${
+              className={`nav-item absolute transition-all duration-300 ${
                 isMenuOpen
                   ? "opacity-0 translate-y-[-10px] rotate-[-5deg]"
                   : "opacity-100"
