@@ -15,6 +15,7 @@ export default function TextReveal({
   const elementRefs = useRef([]);
   const splitRefs = useRef([]);
   const lines = useRef([]);
+  const lastWidth = useRef(window.innerWidth);
 
   useGSAP(
     () => {
@@ -80,14 +81,24 @@ export default function TextReveal({
         }
       };
 
+      const handleResize = () => {
+        const currentWidth = window.innerWidth;
+
+        // Only recalculate if width has changed
+        if (currentWidth !== lastWidth.current) {
+          splitAndAnimate();
+          lastWidth.current = currentWidth;
+        }
+      };
+
       // Initial animation
       splitAndAnimate();
 
-      // Recalculate on window resize
-      window.addEventListener("resize", splitAndAnimate);
+      // Recalculate only on width changes
+      window.addEventListener("resize", handleResize);
 
       return () => {
-        window.removeEventListener("resize", splitAndAnimate);
+        window.removeEventListener("resize", handleResize);
         splitRefs.current.forEach((split) => split?.revert());
       };
     },
