@@ -1,6 +1,6 @@
 # Baldrian's Portfolio
 
-Welcome to the source code for my personal portfolio website — [baldrian.netlify.com](https://baldrian.netlify.com).
+Welcome to the source code for my personal portfolio website — [baldrian.netlify.com](https://baldrian.netlify.app).
 
 I'm a creative coder currently studying [Coded Design](https://www.dmjx.dk/uddannelser/coded-design) at Danish School of Media and Journalism. 
 
