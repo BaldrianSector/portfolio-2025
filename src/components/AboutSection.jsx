@@ -1,6 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import TextReveal from "./TextReveal.jsx";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const AboutSection = () => {
   const roles = [
@@ -15,19 +18,19 @@ const AboutSection = () => {
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const roleRef = useRef(null);
+  const timelineRef = useRef(null);
+  const hasAnimatedRef = useRef(false);
+  const lastWidth = useRef(window.innerWidth);
 
   useEffect(() => {
+    let interval;
+
     const animateRole = () => {
       gsap.to(roleRef.current, {
         opacity: 0,
         duration: 0.5,
         onComplete: () => {
-          let nextIndex;
-          do {
-            nextIndex = Math.floor(Math.random() * roles.length);
-          } while (nextIndex === currentIndex);
-
-          setCurrentIndex(nextIndex);
+          setCurrentIndex((prevIndex) => (prevIndex + 1) % roles.length);
 
           gsap.fromTo(
             roleRef.current,
@@ -38,13 +41,121 @@ const AboutSection = () => {
       });
     };
 
-    const interval = setInterval(animateRole, 4000);
+    const startAnimation = (isInitial = false) => {
+      // clear any existing loop before starting
+      clearInterval(interval);
 
-    // fade in first role on mount
-    gsap.fromTo(roleRef.current, { opacity: 0 }, { opacity: 1, duration: 0.8 });
+      // fade in current role on mount or keep current on resize
+      if (isInitial) {
+        gsap.fromTo(
+          roleRef.current,
+          { opacity: 0 },
+          { opacity: 1, duration: 0.8 }
+        );
+      } else {
+        // On resize, ensure the current role is visible without animation
+        gsap.set(roleRef.current, { opacity: 1 });
+      }
 
-    return () => clearInterval(interval);
-  }, [currentIndex, roles.length]);
+      // start looping
+      interval = setInterval(animateRole, 4000);
+    };
+
+    // Initial start
+    startAnimation(true);
+
+    // restart on resize but keep current role
+    const handleResize = () => {
+      const currentWidth = window.innerWidth;
+
+      // Only fire when under Tailwind's `max-w-xl` (577px)
+      if (currentWidth < 577) {
+        startAnimation(false);
+
+        if (currentWidth !== lastWidth.current) {
+          // Trigger the container animation on resize if it has already been animated
+          if (hasAnimatedRef.current) {
+            createContainerAnimation();
+          }
+        }
+      }
+
+      lastWidth.current = currentWidth;
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      clearInterval(interval);
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [roles.length]);
+
+  const createContainerAnimation = () => {
+    // Kill existing timeline if it exists
+    if (timelineRef.current) {
+      timelineRef.current.kill();
+    }
+
+    // Set initial states
+    gsap.set(".about-roles-container", {
+      height: "26px",
+      marginBottom: "46px",
+    });
+    gsap.set(".about-roles-content", { y: "100%" });
+
+    // Create new timeline
+    timelineRef.current = gsap
+      .timeline()
+      .to(".about-roles-content", {
+        delay: 0.7,
+        y: "0%",
+        duration: 1,
+        ease: "power4.out",
+      })
+      .set(".about-roles-container", {
+        delay: 2,
+        height: "100%",
+        duration: 0,
+        marginBottom: "0px",
+      });
+  };
+
+  useEffect(() => {
+    // Set initial states
+    gsap.set(".about-roles-container", {
+      height: "26px",
+      marginBottom: "46px",
+    });
+    gsap.set(".about-roles-content", { y: "100%" });
+
+    // Create ScrollTrigger that fires the animation
+    ScrollTrigger.create({
+      trigger: ".about-roles-container",
+      start: "top 75%",
+      once: true,
+      markers: true,
+      onEnter: () => {
+        hasAnimatedRef.current = true;
+        createContainerAnimation();
+      },
+    });
+
+    return () => {
+      // Clean up ScrollTrigger and timeline
+      ScrollTrigger.getAll().forEach((trigger) => {
+        if (
+          trigger.trigger &&
+          trigger.trigger.classList?.contains("about-roles-container")
+        ) {
+          trigger.kill();
+        }
+      });
+      if (timelineRef.current) {
+        timelineRef.current.kill();
+      }
+    };
+  }, []);
 
   return (
     <div className="flex flex-col items-start mx-10 pt-10 max-w-xl w-full">
@@ -58,7 +169,7 @@ const AboutSection = () => {
         <h2 className="text-4xl font-bold mb-4">❖ About me</h2>
 
         <p className="about-text text-lg font-medium mb-4 max-w-xl leading-relaxed text-gray">
-          I’m studying{" "}
+          I'm studying{" "}
           <a
             href="https://www.dmjx.dk/uddannelser/coded-design"
             target="_blank"
@@ -101,17 +212,18 @@ const AboutSection = () => {
           ))}
           .
         </p>
-
+      </TextReveal>
+      <div className="about-roles-container overflow-hidden">
         <p
-          className="text-lg font-medium max-w-xl leading-relaxed text-gray"
+          className="about-roles-content text-lg font-medium max-w-xl leading-relaxed text-gray"
           style={{ minHeight: "4.5rem" }}
         >
-          But I’m also{" "}
+          But I'm also{" "}
           <span className="italic" ref={roleRef}>
             {roles[currentIndex]}
           </span>
         </p>
-      </TextReveal>
+      </div>
     </div>
   );
 };

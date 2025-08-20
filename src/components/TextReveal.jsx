@@ -16,6 +16,7 @@ export default function TextReveal({
   const splitRefs = useRef([]);
   const lines = useRef([]);
   const lastWidth = useRef(window.innerWidth);
+  const currentAnimation = useRef(null);
 
   const waitForFonts = async () => {
     try {
@@ -43,6 +44,13 @@ export default function TextReveal({
       const splitAndAnimate = async () => {
         await waitForFonts();
 
+        // Kill any existing animation
+        if (currentAnimation.current) {
+          currentAnimation.current.kill();
+          currentAnimation.current = null;
+        }
+
+        // Revert all splits to restore original innerHTML and allow natural reflow
         splitRefs.current.forEach((split) => split?.revert());
         splitRefs.current = [];
         lines.current = [];
@@ -88,7 +96,7 @@ export default function TextReveal({
         };
 
         if (animateOnScroll) {
-          gsap.to(lines.current, {
+          currentAnimation.current = gsap.to(lines.current, {
             ...animationProps,
             scrollTrigger: {
               trigger: containerRef.current,
@@ -97,16 +105,20 @@ export default function TextReveal({
             },
           });
         } else {
-          gsap.to(lines.current, animationProps);
+          currentAnimation.current = gsap.to(lines.current, animationProps);
         }
       };
 
       const handleResize = () => {
         const currentWidth = window.innerWidth;
-        if (currentWidth !== lastWidth.current) {
+
+        // Only fire when under Tailwind's `max-w-xl` (577px)
+        if (currentWidth < 577 && currentWidth !== lastWidth.current) {
+          // Simply revert and re-split - this allows text to naturally reflow
           splitAndAnimate();
-          lastWidth.current = currentWidth;
         }
+
+        lastWidth.current = currentWidth;
       };
 
       splitAndAnimate();
@@ -114,6 +126,9 @@ export default function TextReveal({
 
       return () => {
         window.removeEventListener("resize", handleResize);
+        if (currentAnimation.current) {
+          currentAnimation.current.kill();
+        }
         splitRefs.current.forEach((split) => split?.revert());
       };
     },

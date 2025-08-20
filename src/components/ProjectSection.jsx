@@ -98,7 +98,7 @@ const ProjectSection = () => {
           const cardData = getProjectCardData(project);
 
           if (!projects.length) {
-            const skeletons = Array(3).fill(0); // show 5 placeholders
+            const skeletons = Array(5).fill(0); // show 5 placeholders
             return (
               <section className="px-10 flex flex-col items-start mx-auto py-8">
                 <div className="space-y-20 flex flex-col align-items-start">
