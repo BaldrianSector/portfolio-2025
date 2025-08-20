@@ -114,10 +114,9 @@ const AboutSection = () => {
         ease: "power4.out",
       })
       .set(".about-roles-container", {
-        delay: 2,
         height: "100%",
-        duration: 0,
         marginBottom: "0px",
+        duration: 0,
       });
   };
 
