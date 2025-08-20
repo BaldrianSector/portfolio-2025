@@ -131,7 +131,7 @@ const AboutSection = () => {
 
     // Create ScrollTrigger that fires the animation
     ScrollTrigger.create({
-      trigger: ".about-roles-container",
+      trigger: ".about-title", // Fire animation along with TextReveal for title
       start: "top 75%",
       once: true,
       onEnter: () => {
@@ -165,7 +165,7 @@ const AboutSection = () => {
       />
 
       <TextReveal animateOnScroll={true} delay={0.2}>
-        <h2 className="text-4xl font-bold mb-4">❖ About me</h2>
+        <h2 className="about-title text-4xl font-bold mb-4">❖ About me</h2>
 
         <p className="about-text text-lg font-medium mb-4 max-w-xl leading-relaxed text-gray">
           I'm studying{" "}
