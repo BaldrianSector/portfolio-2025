@@ -134,7 +134,6 @@ const AboutSection = () => {
       trigger: ".about-roles-container",
       start: "top 75%",
       once: true,
-      markers: true,
       onEnter: () => {
         hasAnimatedRef.current = true;
         createContainerAnimation();

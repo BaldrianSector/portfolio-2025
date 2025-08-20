@@ -55,6 +55,18 @@ const ProjectSection = () => {
     };
   }, [projects]);
 
+  // Refresh ScrollTrigger after projects are fetched
+  useEffect(() => {
+    if (!projects.length) return;
+
+    // Add a small delay to ensure DOM has updated
+    const timer = setTimeout(() => {
+      ScrollTrigger.refresh(true);
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, [projects]);
+
   function getProjectCardData(project) {
     const blok = project.content.body?.find(
       (b) => b.component === "project-card"
@@ -82,7 +94,7 @@ const ProjectSection = () => {
   });
 
   return (
-    <section className="px-10 flex flex-col items-start max-w-6xl mx-auto py-8">
+    <section className="px-10 flex flex-col items-start mx-auto py-8">
       <TextReveal animateOnScroll={true} delay={0.2}>
         <h2 className="text-4xl font-bold mb-6 leading-tight">
           ✦ Featured Projects
