@@ -63,6 +63,9 @@ export default function TextReveal({
           elements = [containerRef.current];
         }
 
+        // Show after setup
+        gsap.set(containerRef.current, { visibility: "visible" });
+
         elements.forEach((element) => {
           elementRefs.current.push(element);
 
@@ -114,6 +117,9 @@ export default function TextReveal({
 
         // Only fire when under Tailwind's `max-w-xl` (577px)
         if (currentWidth < 577 && currentWidth !== lastWidth.current) {
+          // Hide with visibility to maintain layout
+          gsap.set(containerRef.current, { visibility: "hidden" });
+
           // Simply revert and re-split - this allows text to naturally reflow
           splitAndAnimate();
         }

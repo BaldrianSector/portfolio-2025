@@ -7,7 +7,6 @@ gsap.registerPlugin(SplitText);
 const HeroSection = () => {
   const splitRefs = useRef([]);
   const lines = useRef([]);
-  const lastWidth = useRef(window.innerWidth);
 
   const waitForFonts = async () => {
     try {
@@ -102,23 +101,8 @@ const HeroSection = () => {
       tl.play();
     };
 
-    const handleResize = () => {
-      const currentWidth = window.innerWidth;
-      if (currentWidth !== lastWidth.current) {
-        splitAndAnimate();
-        lastWidth.current = currentWidth;
-      }
-    };
-
     // Initial animation
     splitAndAnimate();
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-      splitRefs.current.forEach((split) => split?.revert());
-    };
   }, []);
 
   return (
