@@ -115,8 +115,8 @@ export default function TextReveal({
       const handleResize = () => {
         const currentWidth = window.innerWidth;
 
-        // Only fire when under Tailwind's `max-w-xl` (577px)
-        if (currentWidth < 577 && currentWidth !== lastWidth.current) {
+        // Only fire when under Tailwind's `max-w-xl` (578px)
+        if (currentWidth < 578 && currentWidth !== lastWidth.current) {
           // Hide with visibility to maintain layout
           gsap.set(containerRef.current, { visibility: "hidden" });
 

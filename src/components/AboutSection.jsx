@@ -68,8 +68,8 @@ const AboutSection = () => {
     const handleResize = () => {
       const currentWidth = window.innerWidth;
 
-      // Only fire when under Tailwind's `max-w-xl` (577px)
-      if (currentWidth < 577) {
+      // Only fire when under Tailwind's `max-w-xl` (578px)
+      if (currentWidth < 578) {
         startAnimation(false);
 
         if (currentWidth !== lastWidth.current) {
