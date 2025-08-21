@@ -122,7 +122,7 @@ const HeroSection = () => {
         </div>
 
         {/* Top-left text */}
-        <div className="scramble-text relative self-start justify-self-start -top-11 -left-10 z-10 col-start-1 row-start-1 max-w-[210px] overflow-hidden">
+        <div className="scramble-text relative self-start justify-self-start -top-11 -left-10 z-10 col-start-1 row-start-1 max-w-[220px] overflow-hidden">
           <p className="scramble-text-content text-white text-lg leading-5">
             Design student working at the intersection of programming,
             technology and human interaction.

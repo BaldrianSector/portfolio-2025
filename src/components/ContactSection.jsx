@@ -8,7 +8,7 @@ const ContactSection = () => {
 
         <p className="contact-text text-lg font-medium mb-4 max-w-xl leading-relaxed text-black">
           I’m always open for new opportunities and collaborations. Whether you
-          have a specific project in mind or just want to say hello. Currently,{" "}
+          have a specific project in mind or just want to say hello. Right now,{" "}
           I'm searching for an{" "}
           <span className="underline decoration-2">
             internship position for the fall of 2025.

@@ -116,7 +116,7 @@ export default function MenuOverlay({ isMenuOpen, handleMenuToggle }) {
                 </div>
               ))}
             </div>
-            <div className="menu-socials flex flex-col gap-2 short-sm:pt-3 short-sm:!gap-[1.0rem] short-sm:!leading-[1.2]">
+            <div className="menu-socials flex flex-col gap-2 short-sm:pt-2 short-sm:!gap-[1.0rem] short-sm:!leading-[1.2]">
               {socials.map((social) => (
                 <div className="social" key={social.name}>
                   <a
