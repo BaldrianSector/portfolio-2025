@@ -14,7 +14,7 @@ const MediaBlock = ({ blok }) => {
     ext === "mp4" ? "video/mp4" : ext === "webm" ? "video/webm" : "";
 
   return (
-    <figure className="-mx-10 md:max-w-3xl">
+    <figure className="-mx-[41px] md:max-w-3xl">
       {isVideo ? (
         <video
           className="w-full max-w-full block"

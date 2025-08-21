@@ -40,7 +40,7 @@ const ProjectArticle = () => {
   );
 
   return (
-    <article className="pt-32 py-20 px-10 bg-light text-dark flex flex-col items-center">
+    <article className="pt-32 py-20 px-10 bg-light text-dark flex flex-col items-center overflow-hidden">
       <div className="flex flex-col items-center max-w-3xl">
         {filteredBloks.map((blok) => (
           <div
