@@ -56,6 +56,29 @@ function AppLayout() {
     handleSectionScroll();
   }, [location]);
 
+  // GSAP animation for footer
+  useEffect(() => {
+    gsap.set(".footer-text", {
+      autoAlpha: 0,
+    });
+
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+
+      // Show footer when user is near bottom (within 48px)
+      if (documentHeight - scrollPosition < 48) {
+        gsap.to(".footer-text", {
+          autoAlpha: 1,
+          duration: 2.5,
+        });
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   // Handle navigation from project pages back to home sections
   useEffect(() => {
     if (location.pathname === "/" && location.search) {
@@ -124,7 +147,7 @@ function AppLayout() {
 
       {/* Sticky footer */}
       <footer className="sticky bottom-0 z-0 bg-black text-light flex items-center justify-center m-0 h-12">
-        <p className="text-sm font-reem">
+        <p className="footer-text text-xs font-reem">
           © {new Date().getFullYear()} Made with 💙 in Copenhagen
         </p>
       </footer>

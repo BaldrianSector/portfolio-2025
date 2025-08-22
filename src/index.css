@@ -274,7 +274,8 @@ section {
 }
 
 #hero,
-nav {
+nav,
+footer p {
   visibility: hidden; /* Hide initially for animation */
 }
 
