@@ -7,7 +7,7 @@ const ContactSection = () => {
         <h2 className="text-4xl font-bold mb-4">⌨ Contact me</h2>
 
         <p className="contact-text text-lg font-medium mb-4 max-w-xl leading-relaxed text-black">
-          I’m always open for new opportunities and collaborations. Whether you
+          I’m always open for new opportunities and collaborations, whether you
           have a specific project in mind or just want to say hello. Right now,{" "}
           I'm searching for an{" "}
           <span className="underline decoration-2">
@@ -15,12 +15,12 @@ const ContactSection = () => {
           </span>
         </p>
         <p className="contact-text text-lg font-medium mb-2 max-w-xl leading-relaxed text-gray italic">
-          You can contact me directly via email at{" "}
+          Contact me by email at{" "}
           <a href="mailto:baldriansector@gmail.com">baldriansector@gmail.com</a>
           .
         </p>
         <p className="contact-text text-lg font-medium mb-4 max-w-xl leading-relaxed text-gray italic">
-          I’m also available on{" "}
+          I’m also on{" "}
           <a
             href="https://www.linkedin.com/in/baldrian-sector/"
             target="_blank"
