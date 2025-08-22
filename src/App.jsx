@@ -87,39 +87,43 @@ function AppLayout() {
         handleMenuToggle={handleMenuToggle}
       />
 
-      <Routes>
-        {/* Home and all sections */}
-        <Route
-          path="/"
-          element={
-            <>
-              <Section
-                id="hero"
-                className="hero bg-black !min-h-[max(812px,100svh)]"
-              >
-                <HeroSection />
-              </Section>
-              <Section id="projects" className="projects bg-light text-black">
-                <ProjectSection />
-              </Section>
-              <Section id="about" className="about bg-black">
-                <AboutSection />
-              </Section>
-              <Section id="contact" className="contact bg-light text-black">
-                <ContactSection />
-              </Section>
-            </>
-          }
-        />
+      {/* Main content wrapper with sticky footer setup */}
+      <main className="relative min-h-[100vh] z-10">
+        <Routes>
+          {/* Home and all sections */}
+          <Route
+            path="/"
+            element={
+              <>
+                <Section
+                  id="hero"
+                  className="hero bg-black !min-h-[max(812px,100svh)]"
+                >
+                  <HeroSection />
+                </Section>
+                <Section id="projects" className="projects bg-light text-black">
+                  <ProjectSection />
+                </Section>
+                <Section id="about" className="about bg-black">
+                  <AboutSection />
+                </Section>
+                <Section id="contact" className="contact bg-light text-black">
+                  <ContactSection />
+                </Section>
+              </>
+            }
+          />
 
-        {/* Project detail page */}
-        <Route path="/projects/:slug" element={<ProjectArticle />} />
+          {/* Project detail page */}
+          <Route path="/projects/:slug" element={<ProjectArticle />} />
 
-        {/* Fallback for 404 */}
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+          {/* Fallback for 404 */}
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </main>
 
-      <footer className="bg-black text-light flex items-center justify-center m-0 h-12">
+      {/* Sticky footer */}
+      <footer className="sticky bottom-0 z-0 bg-black text-light flex items-center justify-center m-0 h-12">
         <p className="text-sm font-reem">
           © {new Date().getFullYear()} Made with 💙 in Copenhagen
         </p>
