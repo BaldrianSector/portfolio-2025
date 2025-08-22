@@ -108,12 +108,12 @@ body {
 /* Extra spacing for menu links */
 .menu-links {
   gap: 1.4em;
-  line-height: 3.5em;
+  line-height: 3.6em;
 }
 
 /* Padding for individual links for mobile */
 .link {
-  padding-top: 0.25em;
+  padding-top: 0.35em;
 }
 
 /* Individual link and social item containers */
