@@ -101,7 +101,7 @@ const ProjectSection = () => {
         </h2>
         <p className="text-lg font-medium mb-20 max-w-xl leading-relaxed text-gray">
           I obsess over code. My brain is built for problem solving and I always
-          put huge amounts of care into anything I make.
+          put great amounts of care into anything I make.
         </p>
       </TextReveal>
 
