@@ -93,7 +93,10 @@ function AppLayout() {
           path="/"
           element={
             <>
-              <Section id="hero" className="hero bg-black !min-h-[812px]">
+              <Section
+                id="hero"
+                className="hero bg-black !min-h-[max(812px,100svh)]"
+              >
                 <HeroSection />
               </Section>
               <Section id="projects" className="projects bg-light text-black">
