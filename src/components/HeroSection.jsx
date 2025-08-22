@@ -68,6 +68,7 @@ const HeroSection = () => {
         y: "0%",
       });
       gsap.set(lines.current, { y: "100%" });
+      gsap.set("nav", { y: "-100%" });
 
       // Timeline
       gsap.defaults({ duration: 0.8, ease: "power3.out" });
@@ -84,6 +85,7 @@ const HeroSection = () => {
         duration: 1.2,
         y: "0%",
       })
+        .to("nav", { y: "0%", duration: 1.2 }, "<")
         .to(
           lines.current.filter((line) =>
             line.closest(".scramble-text-content")
@@ -95,8 +97,8 @@ const HeroSection = () => {
           lines.current.filter((line) =>
             line.closest(".mini-description-content")
           ),
-          { y: "0%" },
-          ">-0.8"
+          { y: "0%", duration: 1.2 },
+          ">-2.5"
         );
       tl.play();
     };
