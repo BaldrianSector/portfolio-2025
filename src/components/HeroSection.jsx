@@ -114,7 +114,7 @@ const HeroSection = () => {
         {/* Video wrapper */}
         <div className="item-video relative overflow-hidden col-start-1 row-start-1 z-0">
           <video
-            src="/assets/videos/bolarbear.mp4"
+            src="/assets/videos/Showreel_2025.mp4"
             autoPlay
             muted
             playsInline
