@@ -74,7 +74,7 @@ const HeroSection = () => {
       gsap.defaults({ duration: 0.8, ease: "power3.out" });
       const tl = gsap.timeline({ paused: true, delay: 0.5 });
 
-      tl.from("#hero", {
+      tl.from("#hero, nav", {
         autoAlpha: 0,
         duration: 0,
       });

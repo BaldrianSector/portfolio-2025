@@ -273,7 +273,8 @@ section {
   overflow: hidden;
 }
 
-#hero {
+#hero,
+nav {
   visibility: hidden; /* Hide initially for animation */
 }
 
