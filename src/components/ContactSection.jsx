@@ -15,12 +15,11 @@ const ContactSection = () => {
           </span>
         </p>
         <p className="contact-text text-lg font-medium mb-2 max-w-xl leading-relaxed text-gray italic">
-          Contact me by email at{" "}
+          Contact me at{" "}
           <a href="mailto:baldriansector@gmail.com">baldriansector@gmail.com</a>
-          .
         </p>
         <p className="contact-text text-lg font-medium mb-4 max-w-xl leading-relaxed text-gray italic">
-          I’m also on{" "}
+          I’m on{" "}
           <a
             href="https://www.linkedin.com/in/baldrian-sector/"
             target="_blank"
@@ -52,7 +51,6 @@ const ContactSection = () => {
           >
             Instagram
           </a>
-          .
         </p>
       </TextReveal>
     </div>
