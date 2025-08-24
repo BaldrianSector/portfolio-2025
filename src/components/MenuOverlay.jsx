@@ -91,7 +91,7 @@ export default function MenuOverlay({ isMenuOpen, handleMenuToggle }) {
           <div className="col-lg flex-1 hidden md:flex justify-center items-center">
             <div className="menu-preview-img h-full overflow-hidden">
               <img
-                src="/assets/images/Standing-Portrait.jpg"
+                src="/assets/images/Portrait Standing.jpg"
                 alt=""
                 className="w-full h-full object-cover object-[60%_20%]"
               />
