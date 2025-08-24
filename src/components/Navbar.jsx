@@ -1,23 +1,26 @@
 import React, { useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { gsap } from "gsap";
 
 const Navbar = ({ isMenuOpen, handleMenuToggle }) => {
   const navRef = useRef(null);
   const lastScrollY = useRef(0);
   const ticking = useRef(false);
+  const location = useLocation();
 
   useEffect(() => {
     const nav = navRef.current;
     if (!nav) return;
 
-    // Scroll threshold - adjust this value to change when navbar hides
-    const SCROLL_THRESHOLD = 28; // Change this number (pixels)
-    let isResizing = false;
-    let hasScrolled = false; // Track if user has scrolled yet
+    // If not on landing page, ensure navbar is visible
+    if (location.pathname !== "/") {
+      gsap.set(nav, { autoAlpha: 1 });
+    }
 
-    // Ensure navbar starts at top position on load
-    gsap.set(nav, { y: 0 });
+    // Scroll threshold - adjust this value to change when navbar hides
+    const SCROLL_THRESHOLD = 28;
+    let isResizing = false;
+    let hasScrolled = false;
 
     const updateNavbar = () => {
       // Skip animation if window is being resized or menu is open
@@ -81,7 +84,7 @@ const Navbar = ({ isMenuOpen, handleMenuToggle }) => {
       // Clear the resize flag after a short delay
       setTimeout(() => {
         isResizing = false;
-        lastScrollY.current = window.scrollY; // Update scroll position
+        lastScrollY.current = window.scrollY;
       }, 150);
     };
 
@@ -92,7 +95,7 @@ const Navbar = ({ isMenuOpen, handleMenuToggle }) => {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleResize);
     };
-  }, [isMenuOpen]);
+  }, [isMenuOpen, location.pathname]); // Added location.pathname as dependency
 
   return (
     <nav
