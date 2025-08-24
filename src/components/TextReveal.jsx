@@ -184,20 +184,6 @@ export default function TextReveal({
           }
         }
 
-        console.log("Resize event:", {
-          currentWidth,
-
-          lastWidth: lastWidth.current,
-
-          isSmall,
-
-          wasSmallBefore,
-
-          hasTriggeredSinceSmall: hasTriggeredSinceSmall.current,
-
-          shouldResize,
-        });
-
         if (shouldResize) {
           // Hide with visibility to maintain layout
 
