@@ -6,22 +6,18 @@ const links = [
   {
     label: "01 Home",
     href: "?section=hero",
-    img: "/assets/images/Standing-Portrait.jpg",
   },
   {
     label: "02 Projects",
     href: "?section=projects",
-    img: "/assets/images/img-2.jpg",
   },
   {
     label: "03 About",
     href: "?section=about",
-    img: "/assets/images/img-3.jpg",
   },
   {
     label: "04 Contact",
     href: "?section=contact",
-    img: "/assets/images/img-4.jpg",
   },
 ];
 
