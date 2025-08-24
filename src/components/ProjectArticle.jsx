@@ -42,7 +42,7 @@ const ProjectArticle = () => {
   return (
     <article className="pt-32 py-20 px-10 bg-light text-dark flex flex-col items-center overflow-hidden">
       <div className="flex flex-col items-center max-w-3xl">
-        {filteredBloks.map((blok) => (
+        {filteredBloks.map((blok, index) => (
           <div
             key={blok._uid}
             className="w-full opacity-0 translate-y-8 animate-fade-in-up"
@@ -51,7 +51,10 @@ const ProjectArticle = () => {
               animationFillMode: "forwards",
             }}
           >
-            <StoryblokComponent blok={blok} />
+            <StoryblokComponent
+              blok={blok}
+              isLast={index === filteredBloks.length - 1}
+            />
           </div>
         ))}
       </div>

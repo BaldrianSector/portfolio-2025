@@ -1,7 +1,11 @@
 import ReactMarkdown from "react-markdown";
 
-const TextBlock = ({ blok }) => (
-  <div className="prose prose-invert article-text text-lg py-12 max-w-2xl mx-auto my-4 text-dark font-normal">
+const TextBlock = ({ blok, isLast = false }) => (
+  <div
+    className={`prose prose-invert article-text text-lg max-w-2xl mx-auto text-dark font-normal ${
+      isLast ? "pt-12 mt-4" : "py-12 my-4"
+    }`}
+  >
     <ReactMarkdown
       components={{
         a: ({ href, children, ...props }) => (
