@@ -24,7 +24,6 @@ const MediaBlock = ({ blok }) => {
           playsInline
         >
           <source src={filename} type={mimeType} />
-          Your browser does not support the video tag.
         </video>
       ) : (
         <img
