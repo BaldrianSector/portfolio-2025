@@ -24,7 +24,7 @@ const links = [
 const socials = [
   {
     name: "LinkedIn",
-    url: "https://www.linkedin.com/in/baldrian-sector-227042269/",
+    url: "https://www.linkedin.com/in/baldriansector",
   },
   { name: "Instagram", url: "https://www.instagram.com/baldrian.jpeg/" },
   { name: "Facebook", url: "https://www.facebook.com/BaldrianSector" },

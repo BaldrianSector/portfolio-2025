@@ -21,7 +21,7 @@ const ContactSection = () => {
         <p className="contact-text text-lg font-medium mb-4 max-w-xl leading-relaxed text-gray italic">
           I’m on{" "}
           <a
-            href="https://www.linkedin.com/in/baldrian-sector/"
+            href="https://www.linkedin.com/in/baldriansector"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -29,7 +29,7 @@ const ContactSection = () => {
           </a>
           ,{" "}
           <a
-            href="https://github.com/baldrian-sector"
+            href="https://github.com/BaldrianSector"
             target="_blank"
             rel="noopener noreferrer"
           >
