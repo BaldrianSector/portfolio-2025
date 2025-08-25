@@ -187,7 +187,7 @@ const AboutSection = () => {
             ["Three.js", "https://threejs.org/"],
             ["React", "https://reactjs.org/"],
             ["Vue", "https://vuejs.org/"],
-            ["StoryBlok", "https://www.storyblok.com/"],
+            ["Storyblok", "https://www.storyblok.com/"],
             ["Unity", "https://unity.com/"],
             ["C#", "https://learn.microsoft.com/en-us/dotnet/csharp/"],
             ["Generative AI"],
