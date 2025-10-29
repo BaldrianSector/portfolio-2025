@@ -250,7 +250,7 @@ body {
 /* ===== ARTICLE LINKS ===== */
 
 .article-text a {
-  font-size: 1.2rem;
+  font-size: 1.125rem;
   font-weight: 400;
   color: var(--color-link); /* Specific color for article links */
   white-space: nowrap;
