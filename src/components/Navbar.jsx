@@ -129,7 +129,7 @@ const Navbar = ({ isMenuOpen, handleMenuToggle }) => {
               Coded Designer
             </Link>
             <Link to="/?section=hero" className="">
-              Copenhagen, Denmark
+              Aarhus, Denmark
             </Link>
           </div>
         </div>

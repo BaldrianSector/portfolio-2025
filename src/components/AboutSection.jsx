@@ -167,7 +167,7 @@ const AboutSection = () => {
         <h2 className="about-title text-4xl font-bold mb-4">❖ About me</h2>
 
         <p className="about-text text-lg font-medium mb-4 max-w-xl leading-relaxed text-gray">
-          I'm studying{" "}
+          I study{" "}
           <a
             href="https://www.dmjx.dk/uddannelser/coded-design"
             target="_blank"
@@ -175,9 +175,17 @@ const AboutSection = () => {
           >
             Coded Design
           </a>{" "}
-          at the Danish School of Media and Journalism. I work with a variety of
+          and make apps at{" "}<a
+            href="https://vippsmobilepay.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Vipps MobilePay
+          </a>
+          . I work with a variety of
           tools including —{" "}
           {[
+            ["Swift", "https://developer.apple.com/swift/"],
             [
               "JavaScript",
               "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
