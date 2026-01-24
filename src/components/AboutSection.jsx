@@ -169,7 +169,7 @@ const AboutSection = () => {
         <p className="about-text text-lg font-medium mb-4 max-w-xl leading-relaxed text-gray">
           I study{" "}
           <a
-            href="https://www.dmjx.dk/uddannelser/coded-design"
+            href="https://www.dmjx.dk/uddannelser/visuel-kommunikation#:~:text=Blood%2C%20i%20London.-,Coded%20Design,-Teknologi%20har%20et"
             target="_blank"
             rel="noopener noreferrer"
           >
