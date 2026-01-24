@@ -110,7 +110,7 @@ const HeroSection = () => {
   return (
     <>
       {/* Grid container */}
-      <div className="hero-wrapper h-full w-full grid self-center py-28 px-24 max-w-[520px]">
+      <div className="hero-wrapper h-full w-full grid self-center py-28 px-24 max-w-[520px] max-h-[840px]">
         {/* Video wrapper */}
         <div className="item-video relative overflow-hidden col-start-1 row-start-1 z-0">
           <video
