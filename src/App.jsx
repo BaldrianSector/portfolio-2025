@@ -148,7 +148,7 @@ function AppLayout() {
       {/* Sticky footer */}
       <footer className="sticky bottom-0 z-0 bg-black text-light flex items-center justify-center m-0 h-12">
         <p className="footer-text text-xs font-reem">
-          © {new Date().getFullYear()} Made with 💙 in Copenhagen
+          © {new Date().getFullYear()} Made with 💙 in Denmark
         </p>
       </footer>
     </div>
