@@ -11,10 +11,10 @@ My portfolio showcases selected creative projects across art, design, and intera
 ## 🧰 Tech Stack
 
 - **React** – UI and routing
-- **Vite** – Lightning-fast development and build tooling
-- **Tailwind CSS** – Utility-first styling
+- **Figma** - Design and wireframing
+- **Vite** – Development and build tooling
+- **Tailwind CSS** – Inline styling
 - **GSAP** – Smooth animations
-- **Three.js** – (Optional) 3D elements and interactions
 - **Storyblok** – Headless CMS for dynamic content
 - **Netlify** – Continuous deployment and hosting
 
