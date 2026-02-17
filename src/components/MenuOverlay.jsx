@@ -93,7 +93,7 @@ export default function MenuOverlay({ isMenuOpen, handleMenuToggle }) {
               <img
                 src="/assets/images/Portrait Standing.jpg"
                 alt=""
-                className="w-full h-full object-cover object-[60%_20%]"
+                className="w-full h-full object-cover object-[60%_20%] max-w-[400px]"
               />
             </div>
           </div>
