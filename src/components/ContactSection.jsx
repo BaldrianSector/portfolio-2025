@@ -33,19 +33,20 @@ const ContactSection = () => {
           </a>
           ,{" "}
           <a
-            href="https://www.facebook.com/BaldrianSector"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Facebook
-          </a>{" "}
-          and{" "}
-          <a
             href="https://www.instagram.com/baldrian.jpeg/"
             target="_blank"
             rel="noopener noreferrer"
           >
             Instagram
+          </a>
+          ,{" "}
+          and{" "}
+          <a
+            href="https://www.facebook.com/BaldrianSector"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Facebook
           </a>
         </p>
       </TextReveal>

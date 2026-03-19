@@ -26,9 +26,9 @@ const socials = [
     name: "LinkedIn",
     url: "https://www.linkedin.com/in/baldriansector",
   },
+  { name: "GitHub", url: "https://github.com/BaldrianSector" },
   { name: "Instagram", url: "https://www.instagram.com/baldrian.jpeg/" },
   { name: "Facebook", url: "https://www.facebook.com/BaldrianSector" },
-  { name: "GitHub", url: "https://github.com/BaldrianSector" },
 ];
 
 export default function MenuOverlay({ isMenuOpen, handleMenuToggle }) {
