@@ -138,7 +138,7 @@ export default function MenuOverlay({ isMenuOpen, handleMenuToggle }) {
           <a href="tel:+4527458765" className="text-nowrap">
             Call me
           </a>
-          <a href="/assets/documents/Baldrian Sector - Resume 2026, Spring.pdf">
+          <a href="/assets/documents/Baldrian Sector - Resume 2026, Fall.pdf">
             Resume
           </a>
         </div>
