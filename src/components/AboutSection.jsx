@@ -167,7 +167,7 @@ const AboutSection = () => {
         <h2 className="about-title text-4xl font-bold mb-4">❖ About me</h2>
 
         <p className="about-text text-lg font-medium mb-4 max-w-xl leading-relaxed text-gray">
-          I study{" "}
+          I graduated in{" "}
           <a
             href="https://www.dmjx.dk/uddannelser/visuel-kommunikation#:~:text=Blood%2C%20i%20London.-,Coded%20Design,-Teknologi%20har%20et"
             target="_blank"
